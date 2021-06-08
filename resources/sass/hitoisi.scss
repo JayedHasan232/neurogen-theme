@@ -603,7 +603,7 @@ a{
 
 
 // Home - Doctors
-.home-doctors{
+.doctors{
     
     .card{
         border-radius: $radius;
@@ -653,26 +653,23 @@ a{
                 .title{
                     margin-top: .5em;
                     font-size: 1.25em;
-                    font-weight: bold;
                     text-transform: capitalize;
                     transition: $transition;
                 }
                 .designation{
                     margin-top: .5em;
                     font-size: .75em;
-                    font-weight: lighter;
                     text-transform: capitalize;
                     background-color: $color;
                     color: #fff;
                     display: inline-block;
                     padding: .25em .75em;
-                    border-radius: 1em;
+                    border-radius: .5em;
                     transition: $transition;
                 }
                 .degrees{
                     margin-top: .5em;
                     font-size: .75em;
-                    font-weight: bold;
                     text-transform: capitalize;
                     transition: $transition;
                 }
@@ -971,7 +968,6 @@ a{
 
 .blog-tags{
     text-align: center;
-    border-top: 5px solid #ededed;
 }
 
 // Contact - Map

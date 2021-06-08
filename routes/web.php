@@ -32,20 +32,26 @@ Route::namespace('App\Http\Livewire')->group(function()
         Route::get('services/{url}', Services\Show::class)->name('services.show');
 
         // Research
-        Route::get('research', Research\Index::class)->name('research.index');
+        Route::get('research', Research\Index::class)->name('research');
         
         // Blog
         Route::get('blog', Blog\Index::class)->name('blog.index');
         Route::get('blog/{url}', Blog\Show::class)->name('blog.show');
         
         // Gallery
-        Route::get('gallery/{identifier?}', Gallery\Index::class)->name('gallery.index');
+        Route::get('gallery/{identifier?}', Gallery\Index::class)->name('gallery');
 
+        // Career
         Route::get('career', Career\Index::class)->name('career.index');
+
+        // Appointment
         Route::get('appointment', Appointment::class)->name('appointment');
 
-        // Route::get('about', About::class)->name('about');
-        // Route::get('contact', Contact::class)->name('contact');
+        // About
+        Route::get('about', About\Index::class)->name('about');
+
+        // Contact
+        Route::get('contact', Contact\Index::class)->name('contact');
         // Route::get('developer', Developer::class)->name('developer');
         
     });

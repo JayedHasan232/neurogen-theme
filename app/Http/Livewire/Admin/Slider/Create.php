@@ -57,12 +57,12 @@ class Create extends Component
             $result = Image::store($image, $dimension, $path);
 
             $slider->update([
-                "source" => $result->image,
+                "image" => $result->image,
                 "image_medium" => $result->image_medium,
                 "image_small" => $result->image_small,
             ]);
         }
-            
+
         $this->reset();
 
         return back()->with('success', 'Success!');

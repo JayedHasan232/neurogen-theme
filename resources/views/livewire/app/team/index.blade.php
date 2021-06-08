@@ -1,111 +1,63 @@
-<div>
-    <div class="uni-banner-default" style="background: url({{ asset('storage/' . \App\Models\SiteInfo::find(1)->header_bg) }}) no-repeat;">
-        <div class="container">
-            <!-- Page title -->
-            <div class="page-title">
-                <div class="page-title-inner">
-                    @if($type == 1)
-                        <h1>Doctors</h1>
-                    @elseif($type == 2)
-                        <h1>Lab Personnel</h1>
-                    @elseif($type == 3)
-                        <h1>Clinical Psychologists</h1>
-                    @elseif($type == 4)
-                        <h1>Therapists</h1>
-                    @elseif($type == 5)
-                        <h1>Nutritionists</h1>
-                    @endif
-                </div>
-            </div>
-            <!-- End page title -->
-
-            <!-- Breadcrumbs -->
-            <ul class="breadcrumbs">
-                <li><a href="#">Healthcare Services</a></li>
+<section class="{{ env('BS_CONTAINER') }} py-5">
+    <div class="sec-head d-block">
+        <div class="breadcrumb d-flex align-items-center m-0 mb-5">
+            <a href="/" class="me-2 text-muted text-capitalize">
+                {{ __( 'Home' ) }}
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                </svg>
+            </a>
+            <a href="#" class="me-2 text-muted text-capitalize">
+                {{ __( 'Healthcare' ) }}
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                </svg>
+            </a>
+            <h1 class="me-2 text-accent text-capitalize">
                 @if($type == 1)
-                    <li><a>Clinics</a></li>
-                    <li><a>Doctors</a></li>
+                    Doctors
                 @elseif($type == 2)
-                    <li><a>GGMC</a></li>
-                    <li><a>Lab Personnel</a></li>
+                    Lab Personnel
                 @elseif($type == 3)
-                    <li><a>Precision Therapeutics</a></li>
-                    <li><a>Clinical Psychologists</a></li>
+                    Clinical Psychologists
                 @elseif($type == 4)
-                    <li><a>Precision Therapeutics</a></li>
-                    <li><a>Therapists</a></li>
+                    Therapists
                 @elseif($type == 5)
-                    <li><a>Precision Therapeutics</a></li>
-                    <li><a>Nutritionists</a></li>
+                    Nutritionists
                 @endif
-            </ul>
-            <!-- End breadcrumbs -->
+            </h1>
         </div>
     </div>
 
-    <div class="uni-our-doctor-body" style="margin-top: 2em">
-        <div class="container">
-            <div class="row">
-                @foreach($members as $member)
-                <div class="col-md-4 col-sm-6">
-                    <div class="uni-our-doctor-item-default">
-                        <div class="item-img">
-                            <a href="{{ route('app.healthcare.team.show', [ 'type' => $member_type, 'url' => $member->url ]) }}">
-                                <img src="{{ asset('storage/' . $member->image) }}" alt="{{ $member->name }}" class="img-responsive">
+    <div class="row g-4 doctors">
+        @foreach($members as $member)
+            <div class="col-sm-6 col-md-3">
+                <div class="card h-100">
+                    <div class="image-frame">
+                        <img src="{{ asset('storage/' .  ($member->image_medium ?? $member->image)) }}" alt="{{ $member->name }}" class="card-img-top">
+                    </div>
+                    <div class="card-body">
+                        <div class="contents">
+                            <h3 class="title">Dr. {{ $member->name }}</h3>
+                            <h4 class="designation">{{ $member->designation }}</h4>
+                            <h5 class="degrees">{{ $member->degrees }}</h5>
+                        </div>
+                        <div class="link-group">
+                            <a href="mailto:{{ $member->email }}" class="link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                                    <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="link">
+                                Read More
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right arrow" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                                </svg>
                             </a>
                         </div>
-                        <div class="item-caption">
-                            <div class="item-caption-head">
-                                <div class="col-md-12 col-sm-9 col-xs-9 uni-clear-padding">
-                                    <div class="item-title">
-                                        <h4>{{ $member->name }}</h4>
-                                        <span>{{ $member->designation }}</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item-caption-info">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <td>Degrees</td>
-                                            <td>{{ $member->degrees }}</td>
-                                        </tr>
-                                    </thead>
-                                    {{--<tbody>
-                                        <tr>
-                                            <td>Child Neurologist</td>
-                                            <!-- <td>8:00 am - 17:00 pm</td> -->
-                                        </tr>
-                                        <tr>
-                                            <td>Associate Professor</td>
-                                            <!-- <td>10:00 am - 15:00 pm</td> -->
-                                        </tr>
-                                        <tr>
-                                            <td>BSMMU</td>
-                                            <!-- <td>8:00 am - 12:00 pm</td> -->
-                                        </tr>
-                                    </tbody>--}}
-                                    <tfoot>
-                                        <tr>
-                                            <td colspan="2">
-                                                <ul>
-                                                    <li><a href="mailto:{{ $member->email }}"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-                                                    @auth()
-                                                        @if(Auth::user()->role != 0)
-                                                        <li><a href="{{ route('admin.team.edit', $member->id) }}" class="readmore" target="_blank" title="Only admin or modarator can see this."><i class="fa fa-edit" aria-hidden="true"></i></a></li>
-                                                        @endif
-                                                    @endauth
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                    </tfoot>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                    </div>                        
                 </div>
-                @endforeach
             </div>
-        </div>
+        @endforeach
     </div>
-</div>
+</section>

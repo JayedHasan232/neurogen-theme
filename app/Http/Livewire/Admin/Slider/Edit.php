@@ -55,7 +55,7 @@ class Edit extends Component
 
         if($this->image){
 
-            Storage::delete($this->item->source);
+            Storage::delete($this->item->image);
             Storage::delete($this->item->image_medium);
             Storage::delete($this->item->image_small);
 
@@ -75,7 +75,7 @@ class Edit extends Component
             $result = Image::store($image, $dimension, $path);
 
             $this->slider->update([
-                "source" => $result->image,
+                "image" => $result->image,
                 "image_medium" => $result->image_medium,
                 "image_small" => $result->image_small,
             ]);

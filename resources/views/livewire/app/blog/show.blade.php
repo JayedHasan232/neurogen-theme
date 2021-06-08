@@ -1,6 +1,6 @@
 <article>
     <section class="py-5 bg-light">
-        <div class="container">
+        <div class="{{ env('BS_CONTAINER') }}">
             <div class="row">
                 <div class="col-md-7 order-md-2 mb-3 mb-md-0 featured-image">
                     <img class="img-fluid" src='{{ asset("storage/$blog->image") }}' alt="{{ $blog->title }}" title="{{ $blog->title }}">
@@ -40,10 +40,10 @@
 
                     <div class="author-information">
                         <div class="image">
-                            <img src="{{ asset('https://rayple.com/media/dummy/user.jpg') }}" alt="{{ $blog->author->name }}" title="{{ $blog->author->name }}">
+                            <img src="{{ asset('https://rayple.com/media/dummy/user.jpg') }}" alt="{{ env('APP_NAME') }}" title="{{ env('APP_NAME') }}">
                         </div>
                         <div class="information">
-                            <h3 class="name">{{ $blog->author->name }}</h3>
+                            <h3 class="name">{{ env('APP_NAME') }}</h3>
                             <small class="date">{{ $blog->created_at->format('d M Y') }}</small>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
     </section>
 
     <section class="py-5">
-        <div class="container">
+        <div class="{{ env('BS_CONTAINER') }}">
             <div class="row mb-5">
             <div class="col-md-10 mx-auto">
                 <div class="blog-details article text-justify">
@@ -72,8 +72,8 @@
     </section>
 
     @if($blog->tags)
-    <section class="py-5 blog-tags">
-        <div class="container">
+    <section class="py-5 bg-light blog-tags">
+        <div class="{{ env('BS_CONTAINER') }}">
             @foreach($blog->tags as $tag)
                 <a class="btn btn-accent mb-1 py-1 px-2 rounded-pill" href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tag-fill" viewBox="0 0 16 16">
@@ -87,15 +87,18 @@
     @endif
 
     @if( $relatedBlogs->count() )
-    <section class="py-5">
-        <div class="container">
-            <div class="row">
-                @foreach( $relatedBlogs as $blog )
-                <div class="col-6 col-md-3">
-                    <a class="blog d-inline-block bg-white h-100" hreflang="{{ $blog->lang }}" href="{{ route('ui.blog.show', $blog->url) }}" title="{{ $blog->title }}">
-                    <img class="card-img-top" src='{{ asset("storage/$blog->img_medium") }}' alt="{{$blog->title}}" title="{{ $blog->title }}">
-                    <div class="blog-body">
-                        <div class="d-block text-left">
+    <section class="{{ env('BS_CONTAINER') }} py-5">
+        <h2 class="d-block mb-5">Related Blogs</h2>
+        <div class="row g-4">
+            @foreach($relatedBlogs as $blog)
+            <div class="col-sm-6 col-md-4">
+                <div class="blog-post">
+                    <div class="informations">
+                        <div class="image-frame">
+                            <img src="{{ asset('storage/' . ($blog->image_medium ?? $blog->image) ) }}" alt="{{ $blog->title }}" class="card-img-top">
+                        </div>
+                        <h3 class="title">{{ $blog->title }}</h3>
+                        <div class="d-block text-left mb-2">
                             <span class="badge bg-light d-inline text-accent mr-1" title="Reading time">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-watch" viewBox="0 0 16 16">
                                     <path d="M8.5 5a.5.5 0 0 0-1 0v2.5H6a.5.5 0 0 0 0 1h2a.5.5 0 0 0 .5-.5V5z"/>
@@ -104,13 +107,30 @@
                                 {{ readingTime( $blog->article ) }} Min
                             </span>
                         </div>
-                        <h4 class="text-dark my-2 d-block">{{ $blog->category->title }}</h4>
-                        <h3 class="h4 blog-title text-accent">{{ $blog->title }}</h3>
+                        <p class="overview">{{ Str::limit(strip_tags($blog->article), 150, '...') }}</p>
                     </div>
-                    </a>
+                    <div class="link-group">
+                        <a href="{{ route('app.blog.show', $blog->url) }}" class="link">
+                            Read More
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right arrow" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                            </svg>
+                        </a>
+                        @auth()
+                            @if(Auth::user()->role != 0)
+                                <a href="{{ route('admin.blog.edit', $blog->id) }}" class="link" title="Only admin or modarator can see this." target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                    </svg>
+                                    Edit
+                                </a>
+                            @endif
+                        @endauth
+                    </div>
                 </div>
-                @endforeach
             </div>
+            @endforeach
         </div>
     </section>
     @endif

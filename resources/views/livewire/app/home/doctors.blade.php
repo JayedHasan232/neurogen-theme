@@ -1,4 +1,4 @@
-<section class="section home-doctors">
+<section class="section doctors">
     <div class="{{ env('BS_CONTAINER') }}">
         <h2 class="section-title">Our Doctors</h2>
         <p class="section-overview text-justify-center">
@@ -10,7 +10,7 @@
             <div class="col-sm-6 col-md-3">
                 <div class="card h-100">
                     <div class="image-frame">
-                        <img src="{{ asset('storage/' . $doctor->image) }}" alt="{{ $doctor->name }}" class="card-img-top">
+                        <img src="{{ asset('storage/' . ($doctor->image_medium ?? $doctor->image) ) }}" alt="{{ $doctor->name }}" class="card-img-top">
                     </div>
                     <div class="card-body">
                         <div class="contents">

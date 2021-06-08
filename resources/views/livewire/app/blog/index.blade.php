@@ -19,7 +19,7 @@
             <div class="blog-post">
                 <div class="informations">
                     <div class="image-frame">
-                        <img src="{{ asset('storage/' . $blog->image) }}" alt="{{ $blog->title }}" class="card-img-top">
+                        <img src="{{ asset('storage/' . ($blog->image_medium ?? $blog->image) ) }}" alt="{{ $blog->title }}" class="card-img-top">
                     </div>
                     <h3 class="title">{{ $blog->title }}</h3>
                     <div class="d-block text-left mb-2">

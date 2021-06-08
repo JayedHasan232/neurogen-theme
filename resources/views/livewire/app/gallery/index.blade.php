@@ -20,7 +20,7 @@
                 <div class="informations">
                     @if($identifier == 'images')
                     <div class="image-frame">
-                        <img src="{{ asset('storage/' . ($item->image_medium ?? $item->source)) }}" alt="{{ $item->title }}" class="card-img-top">
+                        <img src="{{ asset('storage/' . ($item->image_medium ?? $item->source) ) }}" alt="{{ $item->title }}" class="card-img-top">
                     </div>
                     @else
                     <div class="image-frame">

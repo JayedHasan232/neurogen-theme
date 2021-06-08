@@ -5,6 +5,8 @@ namespace App\Http\Livewire\Admin\Team;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
+use App\Helper\ImageResize as Image;
+
 use Str;
 use App\Models\Team;
 
@@ -53,8 +55,26 @@ class Create extends Component
         ]);
 
         if($team && $this->image){
-            $team->image = $this->image->store('images/team');
-            $team->save();
+            $image = $this->image;
+                $dimension = (object) [
+                    'medium' => (object) [
+                        'width' => 125,
+                        'height' => 125,
+                    ],
+                    'small' => (object) [
+                        'width' => 100,
+                        'height' => 100,
+                    ]
+                ];
+                $path = "team";
+    
+                $result = Image::store($image, $dimension, $path);
+    
+                $team->update([
+                    "image" => $result->image,
+                    "image_medium" => $result->image_medium,
+                    "image_small" => $result->image_small,
+                ]);
         }
             
         $this->reset();

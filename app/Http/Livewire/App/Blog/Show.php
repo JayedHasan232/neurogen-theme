@@ -19,7 +19,8 @@ class Show extends Component
         $this->relatedBlogs = $this->blog->category->blogs()
                             ->where('id', "!=", $this->blog->id)
                             ->where('privacy', 1)
-                            ->get();
+                            ->get()
+                            ->take(6);
     }
     
     public function render()

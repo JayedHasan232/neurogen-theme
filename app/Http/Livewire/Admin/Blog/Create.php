@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Admin\Blog;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
+use App\Helper\ImageResize as Image;
 use Str;
 use App\Models\Blog;
 use App\Models\BlogCategory as Category;
@@ -81,8 +82,26 @@ class Create extends Component
         ]);
 
         if($blog && $this->image){
-            $blog->image = $this->image->store('images/blog');
-            $blog->save();
+            $image = $this->image;
+            $dimension = (object) [
+                'medium' => (object) [
+                    'width' => 320,
+                    'height' => 180,
+                ],
+                'small' => (object) [
+                    'width' => 240,
+                    'height' => 135,
+                ]
+            ];
+            $path = "blog";
+
+            $result = Image::store($image, $dimension, $path);
+
+            $blog->update([
+                "image" => $result->image,
+                "image_medium" => $result->image_medium,
+                "image_small" => $result->image_small,
+            ]);
         }
             
         $this->reset();

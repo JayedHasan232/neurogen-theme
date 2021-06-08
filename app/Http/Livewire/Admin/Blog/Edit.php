@@ -5,8 +5,10 @@ namespace App\Http\Livewire\Admin\Blog;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
-use Str;
 use Storage;
+use App\Helper\ImageResize as Image;
+
+use Str;
 use App\Models\Blog;
 use App\Models\BlogCategory as Category;
 use App\Models\BlogSubCategory as SubCategory;
@@ -97,9 +99,29 @@ class Edit extends Component
         if($this->image){
 
             Storage::delete($this->blog->image);
+            Storage::delete($this->blog->image_medium);
+            Storage::delete($this->blog->image_small);
 
-            $this->blog->image = $this->image->store('images/blog');
-            $this->blog->save();
+            $image = $this->image;
+            $dimension = (object) [
+                'medium' => (object) [
+                    'width' => 600,
+                    'height' => 240,
+                ],
+                'small' => (object) [
+                    'width' => 360,
+                    'height' => 160,
+                ]
+            ];
+            $path = "blog";
+
+            $result = Image::store($image, $dimension, $path);
+
+            $this->blog->update([
+                "image" => $result->image,
+                "image_medium" => $result->image_medium,
+                "image_small" => $result->image_small,
+            ]);
         }
 
         return back()->with('success', 'Success!');

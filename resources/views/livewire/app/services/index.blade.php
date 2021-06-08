@@ -1,197 +1,59 @@
-<div>
-    <div class="uni-banner-default" style="background: url({{ asset('storage/' . \App\Models\SiteInfo::find(1)->header_bg) }}) no-repeat; margin-bottom: 2.5em">
-        <div class="container">
-            <!-- Page title -->
-            <div class="page-title">
-                <div class="page-title-inner">
-                    <h1>Services</h1>
-                </div>
-            </div>
-            <!-- End page title -->
-
-            <!-- Breadcrumbs -->
-            <ul class="breadcrumbs">
-                <li><a href="/">Home</a></li>
-                <li><a href="#">Services</a></li>
-            </ul>
-            <!-- End breadcrumbs -->
+<div class="{{ env('BS_CONTAINER') }} py-5">
+    <div class="sec-head d-block">
+        <div class="breadcrumb d-flex align-items-center m-0 mb-5">
+            <a href="/" class="me-2 text-muted text-capitalize">
+                {{ __( 'Home' ) }}
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                </svg>
+            </a>
+            <h1 class="me-2 text-accent text-capitalize">
+                {{ __('Services') }}
+            </h1>
         </div>
     </div>
 
-    <div class="uni-our-services-2" style="background: url({{ asset('storage/' . \App\Models\SiteInfo::find(1)->header_bg) }}) repeat;">
-        <div class="container">
-            <div class="uni-services-title">
-                <h3>Circle of Care</h3>
-            </div>
-
-            <div class="uni-our-service-2-body">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="tab-nav">
-                            <ul class="nav-pills nav-stacked">
-                                @php
-                                    $flag = 1
-                                @endphp
-                                @foreach($services as $service)
-                                    <li class="{{ $flag == 1 ? 'active' : '' }}"><a href="#tab_{{ $flag }}" data-toggle="pill">{{ $service->title }}</a></li>
-
-                                    @php
-                                        $flag++
-                                    @endphp
-                                @endforeach
-                            </ul>
-                        </div>
+    <div class="row g-4">
+        @foreach($services as $service)
+        <div class="col-sm-6 col-md-4">
+            <div class="blog-post">
+                <div class="informations">
+                    <div class="image-frame">
+                        <img src="{{ asset('storage/' . ($service->image_medium ?? $service->image) ) }}" alt="{{ $service->title }}" class="card-img-top">
                     </div>
-                    <div class="col-md-9">
-                        <div class="tab-content">
-                            @php
-                                $flag = 1
-                            @endphp
-                            @foreach($services as $service)
-                                <div class="tab-pane {{ $flag == 1 ? 'active' : '' }}" id="tab_{{ $flag }}">
-                                    <div class="uni-our-service-2-content-default">
-                                        <div class="row">
-                                            <div class="col-md-5">
-                                                <div class="item-img">
-                                                    <img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->title }}" class="img-responsive">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-7">
-                                                <div class="item-caption">
-                                                    <div class="item-caption-title">
-                                                        <h3>{{ $service->title }}</h3>
-                                                        <div class="uni-line"></div>
-                                                    </div>
-                                                    <p>{{ $service->overview }} <a href="{{ route('app.services.show', $service->url) }}">Read More</a></p>
-                                                    @auth()
-                                                        @if(Auth::user()->role != 0)
-                                                        <a href="{{ route('admin.service.edit', $service->id) }}" class="readmore" target="_blank" title="Only admin or modarator can see this."><i class="fa fa-edit" aria-hidden="true"></i>Edit</a>
-                                                        @endif
-                                                    @endauth
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                @php
-                                    $flag++
-                                @endphp
-                            @endforeach
-
-                            <div class="tab-pane" id="tab_b">
-                                <div class="uni-our-service-2-content-default">
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <div class="item-img">
-                                                <img src="images/services/Deep Clinical Assessment.jpg" alt="" class="img-responsive">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-7">
-                                            <div class="item-caption">
-                                                <div class="item-caption-title">
-                                                    <h3>Deep Clinical Assessment</h3>
-                                                    <div class="uni-line"></div>
-                                                </div>
-                                                <p>
-                                                    শিশুদের অতিরিক্ত চঞ্চলতা, অমনোযোগ, সমবয়সীদের সাথে মিশতে না পারা বা যেকোনো মানসিক বিকাশজনিত সমস্যাগুলি চিহ্নিত করার প্রাথমিক ধাপ হচ্ছে Deep Clinical Assessment.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="tab_c">
-                                <div class="uni-our-service-2-content-default">
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <div class="item-img">
-                                                <img src="images/services/Behavior Modification Therapy.jpg" alt="" class="img-responsive">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-7">
-                                            <div class="item-caption">
-                                                <div class="item-caption-title">
-                                                    <h3>Behavior Modification Therapy</h3>
-                                                    <div class="uni-line"></div>
-                                                </div>
-                                                <p>
-                                                    যে সকল শিশুদের আচার-আচরণে সমস্যা দেখা যায়, চোখের দিকে তাকিয়ে কথা বলতে পারে না, নির্দেশনা অনুসরণ করতে পারে না, তাদের জন্য কার্যকরী প্রক্রিয়া হচ্ছে Behaviour Modification.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="tab_d">
-                                <div class="uni-our-service-2-content-default">
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <div class="item-img">
-                                                <img src="images/services/Speech and Language Therapy.jpg" alt="" class="img-responsive">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-7">
-                                            <div class="item-caption">
-                                                <div class="item-caption-title">
-                                                    <h3>Speech and Language Therapy</h3>
-                                                    <div class="uni-line"></div>
-                                                </div>
-                                                <p>
-                                                    Speech and Language Therapy হলো কথা ও ভাষার বিকাশের চিকিৎসা ব্যবস্থা। অটিজম ও অন্যান্য ভাষাগত সমস্যার সমাধান হচ্ছে Speech and Language Therapy.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="tab_e">
-                                <div class="uni-our-service-2-content-default">
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <div class="item-img">
-                                                <img src="images/services/Occupational Therapy.jpg" alt="" class="img-responsive">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-7">
-                                            <div class="item-caption">
-                                                <div class="item-caption-title">
-                                                    <h3>Occupational Therapy</h3>
-                                                    <div class="uni-line"></div>
-                                                </div>
-                                                <p>
-                                                    Occupational Therapy একটি বিজ্ঞান সম্মত চিকিৎসা যা একজন ব্যক্তির শারীরিক, মানসিক, সামাজিক এবং পরিবেশগত সমস্যা দূর করার মাধ্যমে তাকে দৈনন্দিন কাজে যথাসম্ভব স্বনির্ভর করার লক্ষে অটিজম ও অন্যান্য নিউরো-ডেভেলপমেন্টাল ডিজিজের চিকিৎসা সেবা প্রদান করে থাকে।
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="tab_f">
-                                <div class="uni-our-service-2-content-default">
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <div class="item-img">
-                                                <img src="images/services/Physiotherapy.jpg" alt="" class="img-responsive">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-7">
-                                            <div class="item-caption">
-                                                <div class="item-caption-title">
-                                                    <h3>Physiotherapy</h3>
-                                                    <div class="uni-line"></div>
-                                                </div>
-                                                <p>
-                                                    যেকোনো ধরনের আঘাত ও স্নায়বিক সমস্যার কারণে শিশুদের মাংস পেশির দুর্বলতা,ভারসাম্যহীনতা. হাটতে বসতে  ও চলতে দেরি করা. খিচুনির জন্য হাটতে বা  বসতে দেরি করা এবং  ঘাড় শক্ত বা নরম হওয়া; চলাচলের অক্ষমতাজনিত যাবতীয় সমস্যা ও গতিশীলতা বৃদ্ধির জন্য যে স্বাস্থ্য ও পুনর্বাসন সেবা প্রদান করা হয় তার নাম হলো Physiotherapy.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <h3 class="title">{{ $service->title }}</h3>
+                    <div class="d-block text-left mb-2">
+                        <span class="badge bg-light d-inline text-accent mr-1" title="Reading time">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-watch" viewBox="0 0 16 16">
+                                <path d="M8.5 5a.5.5 0 0 0-1 0v2.5H6a.5.5 0 0 0 0 1h2a.5.5 0 0 0 .5-.5V5z"/>
+                                <path d="M5.667 16C4.747 16 4 15.254 4 14.333v-1.86A5.985 5.985 0 0 1 2 8c0-1.777.772-3.374 2-4.472V1.667C4 .747 4.746 0 5.667 0h4.666C11.253 0 12 .746 12 1.667v1.86a5.99 5.99 0 0 1 1.918 3.48.502.502 0 0 1 .582.493v1a.5.5 0 0 1-.582.493A5.99 5.99 0 0 1 12 12.473v1.86c0 .92-.746 1.667-1.667 1.667H5.667zM13 8A5 5 0 1 0 3 8a5 5 0 0 0 10 0z"/>
+                            </svg>
+                            {{ readingTime( $service->article ) }} Min
+                        </span>
                     </div>
+                    <p class="overview">{{ Str::limit(strip_tags($service->overview), 150, '...') }}</p>
+                </div>
+                <div class="link-group">
+                    <a href="{{ route('app.services.show', $service->url) }}" class="link">
+                        Read More
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right arrow" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                        </svg>
+                    </a>
+                    @auth()
+                        @if(Auth::user()->role != 0)
+                            <a href="{{ route('admin.service.edit', $service->id) }}" class="link" title="Only admin or modarator can see this." target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                </svg>
+                                Edit
+                            </a>
+                        @endif
+                    @endauth
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
 </div>

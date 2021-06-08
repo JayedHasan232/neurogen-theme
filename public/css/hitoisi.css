@@ -686,7 +686,7 @@ a {
   margin-right: .5em;
 }
 
-.home-doctors .card {
+.doctors .card {
   border-radius: 1em;
   overflow: hidden;
   border: 2px dashed #ededed;
@@ -705,7 +705,7 @@ a {
   gap: 1em;
 }
 
-.home-doctors .card:hover {
+.doctors .card:hover {
   border: 2px dashed #2E368F;
   -webkit-box-shadow: 0px 16px 20px -8px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 16px 20px -8px rgba(0, 0, 0, 0.25);
@@ -713,16 +713,16 @@ a {
           transform: translateY(-1em);
 }
 
-.home-doctors .card:hover .title {
+.doctors .card:hover .title {
   color: #262d79;
 }
 
-.home-doctors .card:hover .link .arrow {
+.doctors .card:hover .link .arrow {
   -webkit-animation: fadeInRight 1s infinite;
           animation: fadeInRight 1s infinite;
 }
 
-.home-doctors .card .image-frame {
+.doctors .card .image-frame {
   height: 125px;
   width: 125px;
   border-radius: 50%;
@@ -731,12 +731,12 @@ a {
   transition: 0.3s;
 }
 
-.home-doctors .card .image-frame img {
+.doctors .card .image-frame img {
   height: 100%;
   width: 100%;
 }
 
-.home-doctors .card .card-body {
+.doctors .card .card-body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -751,39 +751,36 @@ a {
   padding: 0;
 }
 
-.home-doctors .card .card-body .contents .title {
+.doctors .card .card-body .contents .title {
   margin-top: .5em;
   font-size: 1.25em;
-  font-weight: bold;
   text-transform: capitalize;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-.home-doctors .card .card-body .contents .designation {
+.doctors .card .card-body .contents .designation {
   margin-top: .5em;
   font-size: .75em;
-  font-weight: lighter;
   text-transform: capitalize;
   background-color: #2E368F;
   color: #fff;
   display: inline-block;
   padding: .25em .75em;
-  border-radius: 1em;
+  border-radius: .5em;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-.home-doctors .card .card-body .contents .degrees {
+.doctors .card .card-body .contents .degrees {
   margin-top: .5em;
   font-size: .75em;
-  font-weight: bold;
   text-transform: capitalize;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-.home-doctors .card .card-body .link-group {
+.doctors .card .card-body .link-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -797,7 +794,7 @@ a {
   margin-top: .75em;
 }
 
-.home-doctors .card .card-body .link-group .link {
+.doctors .card .card-body .link-group .link {
   text-decoration: none;
   font-weight: bold;
   color: #2E368F;
@@ -805,7 +802,7 @@ a {
   transition: 0.3s;
 }
 
-.home-doctors .card .card-body .link-group .link:hover {
+.doctors .card .card-body .link-group .link:hover {
   color: #262d79;
 }
 
@@ -1113,7 +1110,6 @@ a {
 
 .blog-tags {
   text-align: center;
-  border-top: 5px solid #ededed;
 }
 
 .map {

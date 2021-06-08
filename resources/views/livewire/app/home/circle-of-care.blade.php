@@ -10,7 +10,7 @@
             <div class="col-sm-6 col-md-4">
                 <div class="card h-100">
                     <div class="image-frame">
-                        <img src="{{ asset('storage/' . $service->image) }}" alt="" class="card-img-top">
+                        <img src="{{ asset('storage/' . ($service->image_medium ?? $service->image) ) }}" alt="" class="card-img-top">
                     </div>
                     <div class="card-body">
                         <div class="contents">
