@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:#333333;}
+	.st2{fill:#5CBFAB;}
+	.st3{fill:#FFFFFF;}
+	.st4{fill:#97D5C9;}
+</style>
+<g>
+	
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-1289.673" y1="48.2709" x2="-1279.8093" y2="38.4074" gradientTransform="matrix(-0.7071 -0.7071 -0.7071 0.7071 -870.7953 -932.0601)">
+		<stop  offset="0" style="stop-color:#97D5C9"/>
+		<stop  offset="1" style="stop-color:#5CBFAB"/>
+	</linearGradient>
+	<path class="st0" d="M9.1,0.9l4,4c1.2,1.2,1.2,3.1,0,4.3l-3.9,3.9c-1.2,1.2-3.1,1.2-4.3,0l-4-3.9c-1.2-1.2-1.2-3.1,0-4.3l3.9-4
+		C6-0.3,7.9-0.3,9.1,0.9z"/>
+	<g>
+		<path class="st1" d="M8.7,9.4v0.2H9h1c0.1,0,0.2-0.1,0.2-0.2v-4c0-0.1-0.1-0.2-0.2-0.2H9v-1c0-0.1,0-0.1-0.1-0.1H8.7v1.4H5.2V4.1
+			H5c-0.1,0-0.1,0-0.1,0.1v1h-1c-0.1,0-0.2,0.1-0.2,0.2v4c0,0.1,0.1,0.2,0.2,0.2h1h0.3V9.4H4.9V8.1h0.3h3.5H9v1.3H8.7z M9.8,8
+			C9.9,8,10,8.1,10,8.2c0,0.1-0.1,0.2-0.2,0.2S9.6,8.3,9.6,8.2C9.6,8.1,9.7,8,9.8,8z M9.8,8.5c0.1,0,0.2,0.1,0.2,0.2
+			S9.9,8.9,9.8,8.9S9.6,8.8,9.6,8.7C9.6,8.6,9.7,8.5,9.8,8.5z"/>
+		<rect x="8.7" y="8.1" class="st2" width="0.3" height="1.3"/>
+		<rect x="4.9" y="8.1" class="st2" width="0.3" height="1.3"/>
+		<path class="st3" d="M5.2,9.5v0.8h3.5V9.5V9.4V8.1H5.2v1.3V9.5z M5.7,8.5h2.6v0.2H5.7V8.5z M5.7,9h2.6v0.2H5.7V9z M5.7,9.5h2.6
+			v0.2H5.7V9.5z"/>
+		<polygon class="st3" points="5.2,5.5 8.7,5.5 8.7,4.1 8.7,3.7 5.2,3.7 5.2,4.1 		"/>
+		<path class="st3" d="M9.6,8.2c0,0.1,0.1,0.2,0.2,0.2S10,8.3,10,8.2C10,8.1,9.9,8,9.8,8S9.6,8.1,9.6,8.2z"/>
+		<path class="st4" d="M9.6,8.7c0,0.1,0.1,0.2,0.2,0.2S10,8.8,10,8.7c0-0.1-0.1-0.2-0.2-0.2S9.6,8.6,9.6,8.7z"/>
+		<rect x="5.7" y="8.5" class="st2" width="2.6" height="0.2"/>
+		<rect x="5.7" y="9" class="st2" width="2.6" height="0.2"/>
+		<rect x="5.7" y="9.5" class="st2" width="2.6" height="0.2"/>
+	</g>
+</g>
+</svg>
