@@ -697,6 +697,66 @@ a{
     }
 }
 
+// Doctors - Show
+.doctors-show{
+    .sidebar{
+        border: 1px dashed #ededed;
+        border-radius: 1em;
+        overflow: hidden;
+
+        .body{
+            padding: 1em;
+
+            .contents{
+                .title{
+                    color: $color;
+                    font-size: 1.35em;
+                    margin-bottom: .5em;
+                }
+                .designation{
+                    font-size: .75em;
+                    margin-bottom: .5em;
+                }
+                .degrees{
+                    font-size: 1em;
+                }
+            }
+            .link-group{
+                margin-top: 2em;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+    .informations{
+        display: flex;
+        flex-direction: column;
+        gap: 3em;
+
+        .part{
+            .title{
+                font-size: 1.35em;
+                margin-bottom: .5em;
+            }
+            .body{
+                color: #666;
+                display: flex;
+                flex-direction: column;
+                gap: .5em;
+
+                .degree{
+                    list-style: none;
+                }
+
+                .link{
+                    display: block;
+                    color: #666;
+                }
+            }
+        }
+    }
+}
+
 // Home - Statistics
 .home-statistics{
     height: 350px;
@@ -1008,6 +1068,80 @@ a{
             height: 85%;
             width: 85%;
             color: #fff;
+        }
+    }
+}
+
+// Bottom Navigator
+.bottom-navigator{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: $colorHover;
+    border-top: 1px solid #fff;
+    z-index: 1022;
+  
+    .bn-navs{
+        display: flex;
+        justify-content: space-around;
+    
+        .bn-nav{
+            padding: 1em 1.5em;
+            color: #fff;
+            cursor: pointer;
+            transition: .3s;
+    
+            &:hover{
+                background-color: $color;
+            }
+        }
+    }
+}
+// Off canvus sidebar
+.offcanvas{
+    width: 75%;
+
+    .offcanvas-sidebar-contents{
+        display: flex;
+        flex-direction: column;
+      
+        .offcanvas-header{
+            display: flex;
+            align-items: center;
+            border-bottom: 2.5px solid $color;
+            height: 85px;
+            padding: 0.5em 1em;
+        
+            .logo{
+                height: 40px;
+            }
+        }
+        .oc-list-group{
+            .oc-li1{
+                .oc-li1-link{
+                    
+                }
+            }
+        }
+    }
+      
+    @media (max-width: 991.98px) {
+        .offcanvas-collapse {
+            position: fixed;
+            z-index: 1021;
+            top: 0;
+            bottom: 0;
+            left: 100%;
+            width: 80%;
+            overflow-y: auto;
+            visibility: hidden;
+            background-color: #fff;
+            border-left: 1px solid #ededed;
+            transition: transform .3s ease-in-out, visibility .3s ease-in-out;
+        }
+        .offcanvas-collapse.open {
+            visibility: visible;
+            transform: translateX(-100%);
         }
     }
 }

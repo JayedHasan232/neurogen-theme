@@ -9,12 +9,15 @@ use App\Models\SiteInfo as Info;
 
 class Show extends Component
 {
+    public $member_type;
     public $type;
     public $member;
     public $info;
 
     public function mount($type, $url)
     {
+        $this->member_type = $type;
+
         if($type == 'doctors'){
             $this->type = 1;
         }

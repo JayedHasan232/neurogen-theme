@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="https://demo.hitoisi.com/storage/images/resources/TAcDifi1Jh1eREpYQlqm33Hr8dHVLiKO73gVZGP4.png" type="image/x-icon">
     <link rel="canonical" href="{{ url()->current() }}" />
-    <meta name="theme-color" content="#C4161C">
+    <meta name="theme-color" content="#262d79">
     <meta name="language" content="English">
     <meta name="revisit-after" content="1 days">
     <meta name="author" content="neurogenbd.com">
@@ -35,9 +35,10 @@
         @yield('content')
     </main>
 
+    @livewire('app.layout.jump')
+    @livewire('app.layout.bottom-navigator')
     @livewire('app.layout.footer')
     @livewire('app.layout.copyright')
-    @livewire('app.layout.jump')
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
