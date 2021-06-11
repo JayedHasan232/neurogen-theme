@@ -9,6 +9,8 @@ use App\Models\Faq;
 class Create extends Component
 {
 
+    public $faqs;
+
     public $question;
     public $answer;
     public $privacy = 1;
@@ -18,6 +20,11 @@ class Create extends Component
         'answer' => 'required|string',
         'privacy' => 'required',
     ];
+
+    public function mount()
+    {
+        $this->faqs = Faq::all();
+    }
 
     public function store()
     {

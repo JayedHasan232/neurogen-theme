@@ -71,7 +71,7 @@
                     <div class="modal-dialog">
                     <form wire:submit.prevent="update({{ $partner->id }})" class="modal-content box">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">{{ $partner->name }}</h5>
+                                <h5 class="modal-title" id="partner{{ $partner->id }}ModalLabel">{{ $partner->name }}</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body body">
