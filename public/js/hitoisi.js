@@ -1,6 +1,25 @@
 window.onscroll = function () {
-  scrollIndicator()
+  scrollIndicator();
 };
+
+// Botton Navigator
+let oldValue = 0;
+var bottomNavigator = document.getElementById("bottom-navigator-container");
+window.addEventListener('scroll', function (e) {
+
+  // Get the new Value
+  newValue = window.pageYOffset;
+
+  //Subtract the two and conclude
+  if (oldValue - newValue < 0) {
+    bottomNavigator.classList.replace("d-block", "d-none");
+  } else if (oldValue - newValue > 0) {
+    bottomNavigator.classList.replace("d-none", "d-block");
+  }
+
+  // Update the old value
+  oldValue = newValue;
+});
 
 function scrollIndicator() {
   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;

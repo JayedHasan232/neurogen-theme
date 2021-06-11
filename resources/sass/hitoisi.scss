@@ -1067,6 +1067,30 @@ a{
 }
 
 
+// About
+.about-page{
+    padding: 3em 0;
+
+    .informations{
+        .page-title{
+            margin-bottom: .5em;
+        }
+        .overview{
+            color: #666;
+            margin-bottom: 2em;
+        }
+        .service-title{
+            margin-bottom: .25em;
+        }
+        .services{
+
+            .service-item{
+                list-style: none;
+            }
+        }
+    }
+}
+
 // Contact Page
 .contact-page{
     padding: 7.5em 0;

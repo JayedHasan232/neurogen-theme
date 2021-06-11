@@ -131,7 +131,7 @@ Route::namespace('App\Http\Livewire')->group(function()
         });
         
         // About
-        Route::get('about', About::class)->name('about');
+        Route::get('about', About\Index::class)->name('about');
         
         
         // Text

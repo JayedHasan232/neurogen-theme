@@ -3,16 +3,15 @@
 namespace App\Http\Livewire\App\About;
 
 use Livewire\Component;
-
-use App\Models\SiteInfo as Info;
+use App\Models\About;
 
 class Index extends Component
 {
-    public $overview;
-    
+    public $about;
+
     public function mount()
     {
-        $this->overview = Info::find(1)->overview;
+        $this->about = About::find(1);
     }
     
     public function render()

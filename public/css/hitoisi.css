@@ -1223,6 +1223,27 @@ a {
   width: 100%;
 }
 
+.about-page {
+  padding: 3em 0;
+}
+
+.about-page .informations .page-title {
+  margin-bottom: .5em;
+}
+
+.about-page .informations .overview {
+  color: #666;
+  margin-bottom: 2em;
+}
+
+.about-page .informations .service-title {
+  margin-bottom: .25em;
+}
+
+.about-page .informations .services .service-item {
+  list-style: none;
+}
+
 .contact-page {
   padding: 7.5em 0;
 }

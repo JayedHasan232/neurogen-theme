@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Livewire\Admin;
+namespace App\Http\Livewire\Admin\About;
 
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
 use Storage;
-use App\Models\About as Data;
+use App\Models\About;
 
-class About extends Component
+class Index extends Component
 {
     use WithFileUploads;
 
@@ -21,7 +21,7 @@ class About extends Component
 
     public function mount()
     {
-        $this->about = Data::find(1);
+        $this->about = About::find(1);
 
         $this->title = $this->about->title ?? '';
         $this->overview = $this->about->overview ?? '';
@@ -31,7 +31,7 @@ class About extends Component
     public function updateInfo()
     {
         if(!$this->about){
-            $this->about = Data::create([
+            $this->about = About::create([
                 'title' => $this->title,
                 'overview' => $this->overview,
                 'circle' => $this->circle,
@@ -64,6 +64,6 @@ class About extends Component
 
     public function render()
     {
-        return view('livewire.admin.about')->extends('layouts.admin');
+        return view('livewire.admin.about.index')->extends('layouts.admin');
     }
 }

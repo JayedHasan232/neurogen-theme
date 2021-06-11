@@ -1,4 +1,4 @@
-<div class="d-block d-md-none">
+<div class="d-block d-md-none" id="bottom-navigator-container">
     <div class="bottom-navigator">
         <div class="container-xl">
             <div class="bn-navs">

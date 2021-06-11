@@ -57,3 +57,5 @@
         
     </div>
 </form>
+
+@livewire('admin.about.partners')
