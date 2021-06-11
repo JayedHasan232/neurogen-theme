@@ -16,13 +16,10 @@
     <meta property="og:type" content="website">
     <meta property="fb:app_id" content="">
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:site" content="@vonymar">
-    <meta property="twitter:creator" content="@vonymar">
+    <meta property="twitter:site" content="@neurogen">
+    <meta property="twitter:creator" content="@neurogen">
 
     @stack('schema')
-
-    <!-- Scripts -->
-    <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">

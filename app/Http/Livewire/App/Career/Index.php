@@ -3,15 +3,15 @@
 namespace App\Http\Livewire\App\Career;
 
 use Livewire\Component;
-use App\Models\Research;
+use App\Models\Career;
 
 class Index extends Component
 {
-    public $researches;
+    public $careers;
 
     public function mount()
     {
-        $this->researches = Research::where('privacy', 1)->get();
+        $this->careers = Career::where('privacy', 1)->get();
     }
     
     public function render()

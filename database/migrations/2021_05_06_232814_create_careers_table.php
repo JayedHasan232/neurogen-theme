@@ -19,7 +19,6 @@ class CreateCareersTable extends Migration
             $table->string('title');
             $table->string('url');
             $table->longText('article')->nullable();
-            $table->text('tags')->nullable();
             
             $table->string('salary_range')->nullable();
             $table->timestamp('due_date')->nullable();
@@ -27,10 +26,6 @@ class CreateCareersTable extends Migration
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
             $table->text('meta_keywords')->nullable();
-            
-            $table->text('image')->nullable();
-            $table->text('image_medium')->nullable();
-            $table->text('image_small')->nullable();
 
             $table->foreignId('created_by');
             $table->foreignId('updated_by')->nullable();

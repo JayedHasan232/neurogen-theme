@@ -43,6 +43,7 @@ Route::namespace('App\Http\Livewire')->group(function()
 
         // Career
         Route::get('career', Career\Index::class)->name('career.index');
+        Route::get('career/{url}', Career\Show::class)->name('career.show');
 
         // Appointment
         Route::get('appointment', Appointment::class)->name('appointment');
@@ -119,7 +120,6 @@ Route::namespace('App\Http\Livewire')->group(function()
         
         // Career
         Route::namespace('Career')->name('career.')->prefix('career')->group(function(){
-            Route::get('applications', Applications::class)->name('applications');
             Route::get('create', Create::class)->name('create');
             Route::get('edit/{id}', Edit::class)->name('edit');
         });

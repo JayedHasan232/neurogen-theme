@@ -54,7 +54,6 @@
             <a class="sb-link" data-bs-toggle="collapse" data-bs-target="#collapseCareer" aria-expanded="true" aria-controls="collapseCareer">Career</a>
             <ul class="collapse sbc-list" id="collapseCareer" aria-labelledby="headingCareer" data-bs-parent="#sidebarAccordion">
                 <a href="{{ route('admin.career.create') }}" class="sb-link">Job Post</a>
-                <a href="{{ route('admin.career.applications') }}" class="sb-link">Applications</a>
             </ul>
         </li>
 
