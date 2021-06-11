@@ -548,7 +548,6 @@ a{
 
 // Home - Appointment
 .home-appointment{
-    height: 450px;
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
@@ -570,6 +569,7 @@ a{
     }
     
     .informations{
+        min-height: 350px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -580,6 +580,10 @@ a{
             font-size: 3em;
             font-weight: bold;
             color: #fff;
+
+            @media screen and (max-width: 767px){
+                font-size: 2em;
+            }
         }
         .overview{
             color: rgba(255, 255, 255, 0.9);
@@ -759,7 +763,7 @@ a{
 
 // Home - Statistics
 .home-statistics{
-    height: 350px;
+    max-height: 350px;
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
@@ -773,8 +777,16 @@ a{
         .digit{
             font-weight: bold;
             font-size: 50px;
+
+            @media screen and (max-width: 767px) {
+                font-size: 25px;
+            }
         }
-        .label{}
+        .label{
+            @media screen and (max-width: 767px) {
+                font-size: 12px;
+            }
+        }
     }
 }
 
@@ -803,6 +815,19 @@ a{
                 background-color: #F4F4F4;
             }
         }
+    }
+}
+
+
+// Services
+.service-article{
+    padding: 1.5em 1em;
+    border: 1px dashed #ededed;
+    border-radius: 1em;
+    overflow: hidden;
+
+    p{
+        margin-bottom: 1.5em;
     }
 }
 
@@ -1041,6 +1066,107 @@ a{
     }
 }
 
+
+// Contact Page
+.contact-page{
+    padding: 7.5em 0;
+
+    .sec-head{
+        margin: 0;
+    }
+    form{
+
+        .input-group{
+            .input-group-text{
+                color: #fff;
+                background-color: $color;
+                border: 1px solid $color;
+                border-radius: 0;
+            }
+            .form-control{
+                border: 1px solid $color;
+                border-radius: 0;
+                transition: $transition;
+                
+                &:focus{
+                    box-shadow: none;
+                    color: #fff;
+                    background-color: $colorHover;
+
+                    &::placeholder{
+                        color: rgba(255, 255, 255, 0.5);
+                    }
+                }
+            }
+        }
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: .5em;
+        color: #777;
+        margin: 0;
+
+        .list-item{
+            background-color: $color;
+            margin-bottom: 0;
+            border: 1px solid $colorHover;
+            line-height: auto;
+            border-radius: .5em;
+            overflow: hidden;
+            transition: $transition;
+            
+            .link {
+                width: 30px;
+                height: 30px;
+                color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: $transition;
+            }
+            
+            &:hover{
+                background-color: #fff;
+                border: 1px solid $color;
+                .link {
+                    color: $color;
+                }
+            }
+        }
+    }
+    .contact{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .fitem{
+            display: flex;
+            align-items: center;
+            gap: .5em;
+            transition: $transition;
+
+            &:hover{
+                color: $colorHover;
+            }
+        }
+        .address{
+            margin: 1em 0;
+            color: #666;
+        }
+        .link{
+            text-decoration: none;
+            color: #666;
+        }
+        svg{
+            flex-shrink: 0;
+            color: $colorHover;
+        }
+    }
+}
+
 // Jump
 .jump{
     position: fixed;
@@ -1102,9 +1228,8 @@ a{
     width: 75%;
 
     .offcanvas-sidebar-contents{
-        display: flex;
-        flex-direction: column;
-      
+        overflow-y: scroll;
+        
         .offcanvas-header{
             display: flex;
             align-items: center;
@@ -1117,9 +1242,54 @@ a{
             }
         }
         .oc-list-group{
+            padding-top: 2em;
+            padding-bottom: 1em;
+
             .oc-li1{
+                list-style: none;
+                
                 .oc-li1-link{
+                    display: block;
+                    padding: .5em 1em;
+                    color: #333;
+                    cursor: pointer;
+                    transition: $transition;
                     
+                    &:hover{
+                        color: #fff;
+                        background-color: $colorHover;
+
+                        svg{
+                            color: #fff;
+                        }
+                    }
+                    svg{
+                        color: $color;
+                    }
+                }
+
+                .oc-list-group2{
+                    padding-left: 1em;
+
+                    .oc-li2{
+                        list-style: none;
+                        
+                        .oc-li2-link{
+                            display: block;
+                            padding: .5em 1em;
+                            color: #333;
+                            cursor: pointer;
+                            transition: $transition;
+                            
+                            &:hover{
+                                background-color: #ededed;
+                            }
+                            
+                            svg{
+                                color: $color;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -1166,7 +1336,6 @@ a{
         gap: .5em;
         color: #777;
         margin: 0;
-        padding: .5em 0;
 
         .list-item{
             background-color: $color;

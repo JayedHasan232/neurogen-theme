@@ -28,8 +28,8 @@ Route::namespace('App\Http\Livewire')->group(function()
         });
 
         // Services
-        Route::get('services', Services\Index::class)->name('services');
-        Route::get('services/{url}', Services\Show::class)->name('services.show');
+        Route::get('healthcare-services', Services\Index::class)->name('services');
+        Route::get('healthcare-services/{url}', Services\Show::class)->name('services.show');
 
         // Research
         Route::get('research', Research\Index::class)->name('research');

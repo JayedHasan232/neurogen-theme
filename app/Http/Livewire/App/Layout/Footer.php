@@ -25,6 +25,7 @@ class Footer extends Component
         $this->linkedin = $info->linkedin;
         $this->youtube = $info->youtube;
     }
+    
     public function render()
     {
         return view('livewire.app.layout.footer');
