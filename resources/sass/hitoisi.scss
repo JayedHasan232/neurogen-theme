@@ -1191,6 +1191,42 @@ a{
     }
 }
 
+// Appointment Page
+.appointment-page{
+    padding-top: 4em;
+
+    form{
+
+        .input-group{
+            .input-group-text{
+                color: #fff;
+                background-color: $color;
+                border: 1px solid $color;
+                border-radius: 0;
+            }
+            .form-control{
+                border: 1px solid $color;
+                border-radius: 0;
+                transition: $transition;
+                
+                &:focus{
+                    box-shadow: none;
+                    color: #fff;
+                    background-color: $colorHover;
+
+                    &::placeholder{
+                        color: rgba(255, 255, 255, 0.5);
+                    }
+                }
+            }
+        }
+    }
+
+    .recent-blogs{
+        padding: 2em 0;
+    }
+}
+
 // Jump
 .jump{
     position: fixed;

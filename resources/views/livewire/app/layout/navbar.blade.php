@@ -109,7 +109,7 @@
 
             <ul class="navbar-nav">
                 <li class="nav-item d-flex align-items-center">
-                    <a class="btn btn-accent rounded-pill px-3" href="#">{{ __('Get Appointment') }}</a>
+                    <a class="btn btn-accent rounded-pill px-3" href="{{ route('app.appointment') }}">{{ __('Get Appointment') }}</a>
                 </li>
             </ul>
         </div>

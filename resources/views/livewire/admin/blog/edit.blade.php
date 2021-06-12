@@ -3,7 +3,8 @@
     <script src="{{ asset('plugins/tinymce/init-tinymce.js') }}"></script>
 @endpush
 
-<form wire:submit.prevent="store" class="box">
+<form class="box" action="{{ route('admin.blog.update', $blog->id) }}" method="post" enctype="multipart/form-data">
+    @csrf
     <div class="header">
         Edit Post
 
@@ -20,9 +21,9 @@
     <div class="body">
 
         <div class="row g-3 mb-4">
-            <div class="form-group col-md-6">
+        <div class="form-group col-md-6">
                 <label for="title">Title</label>
-                <input wire:model="title" class="form-control @error('title') is-invalid @enderror" type="text" id="title" placeholder="Title">
+                <input wire:model="title" class="form-control @error('title') is-invalid @enderror" type="text" name="title" id="title" placeholder="Title">
                 @error('title')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -31,7 +32,7 @@
             </div>
             <div class="form-group col-md-6">
                 <label for="url">URL</label>
-                <input wire:model="url" class="form-control @error('url') is-invalid @enderror" type="text" id="url" placeholder="URL">
+                <input wire:model="url" class="form-control @error('url') is-invalid @enderror" type="text" name="url" id="url" placeholder="URL">
                 @error('url')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -41,7 +42,7 @@
 
             <div class="form-group col-md-2">
                 <label for="privacy">Privacy</label>
-                <select wire:model="privacy" class="form-control @error('privacy') is-invalid @enderror">
+                <select wire:model="privacy" name="privacy" class="form-control @error('privacy') is-invalid @enderror">
                     <option value="1">Visible</option>
                     <option value="0">Hidden</option>
                 </select>
@@ -53,7 +54,7 @@
             </div>
             <div class="form-group col-md-2">
                 <label for="category">Category</label>
-                <select wire:model="category" class="form-control @error('category') is-invalid @enderror">
+                <select wire:model="category" name="category" class="form-control @error('category') is-invalid @enderror">
                     <option value="">Category</option>
                     @foreach($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->title }}</option>
@@ -67,7 +68,7 @@
             </div>
             <div class="form-group col-md-2">
                 <label for="subcategory">Subcategory</label>
-                <select wire:model="subcategory" class="form-control @error('subcategory') is-invalid @enderror">
+                <select wire:model="subcategory" name="subcategory" class="form-control @error('subcategory') is-invalid @enderror">
                     <option value="">Subcategory</option>
                     @foreach($subcategories as $subcategory)
                     <option value="{{ $subcategory->id }}">{{ $subcategory->title }}</option>
@@ -90,7 +91,7 @@
             </div>
             <div class="form-group col-md-12" wire:ignore>
                 <label for="article">Article</label>
-                <textarea wire:model="article" class="form-control @error('article') is-invalid @enderror tinymce" type="text" name="article" id="article" placeholder="Article"></textarea>
+                <textarea class="form-control @error('article') is-invalid @enderror tinymce" type="text" name="article" id="article" placeholder="Article">{{ old('article', $blog->article) }}</textarea>
                 @error('article')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -100,7 +101,7 @@
 
             <div class="form-group col-md-6">
                 <label for="meta_title">Meta Title</label>
-                <input wire:model="meta_title" class="form-control @error('meta_title') is-invalid @enderror" type="text" id="meta_title" placeholder="Title">
+                <input wire:model="meta_title" class="form-control @error('meta_title') is-invalid @enderror" type="text" name="meta_title" id="meta_title" placeholder="Title">
                 @error('meta_title')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>

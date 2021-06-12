@@ -146,6 +146,21 @@ Route::namespace('App\Http\Livewire')->group(function()
 });
 
 
+// Controllers
+Route::namespace('App\Http\Controllers')->group(function()
+{
+    // Admin
+    Route::middleware(['auth', 'admin'])->name('admin.')->prefix('admin')->group(function()
+    {
+        // Blog
+        Route::name('blog.')->prefix('blog')->group(function(){
+            Route::post('store', 'BlogController@store')->name('store');
+            Route::post('update/{id}', 'BlogController@update')->name('update');
+        });
+    });
+});
+
+
 
 // Laravel Filemanager
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {

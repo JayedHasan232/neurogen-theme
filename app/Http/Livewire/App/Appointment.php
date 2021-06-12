@@ -5,17 +5,21 @@ namespace App\Http\Livewire\App;
 use Livewire\Component;
 
 use App\Models\SiteInfo as Info;
-use App\Models\OpeningHour as OfficeTime;
+use App\Models\Blog;
 
 class Appointment extends Component
 {
     public $info;
-    public $opening_hours;
+    public $blogs;
 
     public function mount()
     {
         $this->info = Info::find(1);
-        $this->opening_hours = OfficeTime::where('privacy', 1)->get();
+
+        $this->blogs = Blog::where('privacy', 1)
+                            ->latest()
+                            ->get()
+                            ->take(6);
     }
     public function render()
     {

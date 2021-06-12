@@ -1386,6 +1386,51 @@ a {
   color: #262d79;
 }
 
+.appointment-page {
+  padding-top: 4em;
+}
+
+.appointment-page form .input-group .input-group-text {
+  color: #fff;
+  background-color: #2E368F;
+  border: 1px solid #2E368F;
+  border-radius: 0;
+}
+
+.appointment-page form .input-group .form-control {
+  border: 1px solid #2E368F;
+  border-radius: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.appointment-page form .input-group .form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #fff;
+  background-color: #262d79;
+}
+
+.appointment-page form .input-group .form-control:focus::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.appointment-page form .input-group .form-control:focus:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.appointment-page form .input-group .form-control:focus::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.appointment-page form .input-group .form-control:focus::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.appointment-page .recent-blogs {
+  padding: 2em 0;
+}
+
 .jump {
   position: fixed;
   left: 0;

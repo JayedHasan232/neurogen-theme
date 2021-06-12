@@ -26,7 +26,7 @@
                             Served directly by experts
                         </span>
                     </div>
-                    <a class="btn btn-light text-accent rounded-pill px-3" href="#">{{ __('Get Appointment') }}</a>
+                    <a class="btn btn-light text-accent rounded-pill px-3" href="{{ route('app.appointment') }}">{{ __('Get Appointment') }}</a>
                 </div>
             </div>
         </div>

@@ -3,30 +3,21 @@
 namespace App\Http\Livewire\Admin\Blog;
 
 use Livewire\Component;
-use Livewire\WithFileUploads;
 
-use App\Helper\ImageResize as Image;
 use Str;
-use App\Models\Blog;
 use App\Models\BlogCategory as Category;
 use App\Models\BlogSubCategory as SubCategory;
 
 class Create extends Component
-{
-    use WithFileUploads;
-    
+{    
     public $categories;
     public $subcategories = [];
 
     public $title;
     public $url;
-    public $privacy = 1;
     public $category;
     public $subcategory;
-    public $image;
-    public $article;
     public $meta_title;
-    public $meta_description;
     public $meta_keywords;
     public $tags;
 
@@ -53,61 +44,6 @@ class Create extends Component
     public function updatedTags()
     {
         $this->meta_keywords = $this->tags;
-    }
-
-    public function store()
-    {
-        $this->validate([
-            'title' => 'required|string',
-            'url' => 'required|string',
-            'privacy' => 'required',
-            'image' => 'required|image',
-            'category' => 'required',
-            'article' => 'required|string',
-        ]);
-
-        $blog = Blog::create([
-            'privacy' => $this->privacy,
-            'category_id' => $this->category,
-            'sub_category_id' => $this->subcategory,
-            'title' => $this->title,
-            'url' => $this->url,
-            'article' => $this->article,
-            'meta_title' => $this->meta_title,
-            'meta_description' => $this->meta_description,
-            'meta_keywords' => $this->meta_keywords,
-            'tags' => $this->tags,
-            'created_by' => auth()->id(),
-            'created_at' => now(),
-        ]);
-
-        if($blog && $this->image){
-            $image = $this->image;
-            $dimension = (object) [
-                'medium' => (object) [
-                    'width' => 320,
-                    'height' => 180,
-                ],
-                'small' => (object) [
-                    'width' => 240,
-                    'height' => 135,
-                ]
-            ];
-            $path = "blog";
-
-            $result = Image::store($image, $dimension, $path);
-
-            $blog->update([
-                "image" => $result->image,
-                "image_medium" => $result->image_medium,
-                "image_small" => $result->image_small,
-            ]);
-        }
-            
-        $this->reset();
-        $this->categories = Category::where('privacy', 1)->get();
-
-        return back()->with('success', 'Success!');
     }
 
     public function render()
