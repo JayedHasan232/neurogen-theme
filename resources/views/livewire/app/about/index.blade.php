@@ -25,4 +25,5 @@
     </div>
 
     @livewire('app.about.partners')
+    @livewire('app.about.our-journey')
 </section>

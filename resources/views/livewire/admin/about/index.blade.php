@@ -59,3 +59,4 @@
 </form>
 
 @livewire('admin.about.partners')
+@livewire('admin.about.our-journey')

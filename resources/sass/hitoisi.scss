@@ -1227,6 +1227,80 @@ a{
     }
 }
 
+// About - Journey
+.our-journey{    
+    .carousel-indicators{
+        display: flex;
+        position: relative;
+        margin: 0;
+        margin-bottom: 2.5em;
+        justify-content: space-between;
+
+        &::after{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 1px;
+            right: 1px;
+            height: 1px;
+            border-top-width: 5px;
+            border-top-style: solid;
+            border-color: $color;
+            z-index: -1;
+
+            @media screen and (max-width: 767px) {
+                border-top-width: 1px;
+            }
+        }
+        
+
+        li{
+            color: $colorHover;
+            background-color: #fff;
+            text-indent: 0!important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            border: 5px solid $color;
+            height: 5em;
+            width: 5em;
+            border-radius: 50%;
+            transition: .3s;
+            
+            @media screen and (max-width: 767px) {
+                border: 1px solid $color;
+                height: 2em;
+                width: 4em;
+                border-radius: 1em;
+                padding: 0 5px;
+                font-size: 14px;
+            }
+        }
+        .active{
+            color: #fff;
+            background-color: $colorHover;
+        }
+    }
+    .carousel-indicators [data-bs-target]{
+        opacity: 1;
+    }
+    .carousel-inner{
+        
+        .carousel-item{
+            height: auto;
+
+            .col{
+                @media screen and (max-width: 767px){
+                    flex: 1 0 100%;
+                }
+            }
+        }
+    }
+}
+
 // Jump
 .jump{
     position: fixed;
@@ -1283,6 +1357,7 @@ a{
         }
     }
 }
+
 // Off canvus sidebar
 .offcanvas{
     width: 75%;
