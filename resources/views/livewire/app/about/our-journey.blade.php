@@ -21,7 +21,7 @@
                             @if($journey->image)
                             <div class="col-md-3">
                                 <div class="image">
-                                    <img src="https://www.neurogenbd.com/wp-content/uploads/2013/05/dna-testing-300x216.jpg" class="card-img-top">
+                                    <img src="{{ asset('storage/' . $journey->image) }}" class="card-img-top" alt="{{ $journey->title }}">
                                     <p class="caption">{{ $journey->title }}</p>
                                 </div>
                             </div>
