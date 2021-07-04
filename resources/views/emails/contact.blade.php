@@ -3,7 +3,9 @@
 # {{ $phone }}
 # {{ $email }}
 
+@component('mail::panel')
 {{ $message }}
+@endcomponent
 
 Thanks,<br>
 {{ $name }}
