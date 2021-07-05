@@ -80,7 +80,7 @@ img {
     -premailer-cellpadding: 0;
     -premailer-cellspacing: 0;
     -premailer-width: 100%;
-    background-color: #F1ECE5;
+    background-color: #EDEDED;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -123,9 +123,9 @@ img {
     -premailer-cellpadding: 0;
     -premailer-cellspacing: 0;
     -premailer-width: 100%;
-    background-color: #F1ECE5;
-    border-bottom: 1px solid #F1ECE5;
-    border-top: 1px solid #F1ECE5;
+    background-color: #EDEDED;
+    border-bottom: 1px solid #EDEDED;
+    border-top: 1px solid #EDEDED;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -232,7 +232,7 @@ img {
 
 .button-blue,
 .button-primary {
-    /* background-color: #F1ECE5; */
+    /* background-color: #EDEDED; */
     background-color: #009E7C;
     border-bottom: 8px solid #009E7C;
     border-left: 18px solid #009E7C;
@@ -266,7 +266,7 @@ img {
 }
 
 .panel-content {
-    background-color: #F1ECE5;
+    background-color: #EDEDED;
     color: #718096;
     padding: 16px;
 }
