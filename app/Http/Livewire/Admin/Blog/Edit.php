@@ -10,7 +10,7 @@ use App\Models\BlogCategory as Category;
 use App\Models\BlogSubCategory as SubCategory;
 
 class Edit extends Component
-{    
+{
     public $blog;
     public $categories;
     public $subcategories = [];
