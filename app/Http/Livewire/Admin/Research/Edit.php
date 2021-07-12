@@ -16,6 +16,7 @@ class Edit extends Component
 
     public $privacy;
     public $title;
+    public $author;
     public $date;
     public $file;
     public $overview;
@@ -26,6 +27,7 @@ class Edit extends Component
 
         $this->privacy = $this->research->privacy;
         $this->title = $this->research->title;
+        $this->author = $this->research->author;
         $this->date = $this->research->date;
         $this->overview = $this->research->overview;
     }
@@ -41,6 +43,7 @@ class Edit extends Component
         $this->research->update([
             'privacy' => $this->privacy,
             'title' => $this->title,
+            'author' => $this->author,
             'date' => $this->date,
             'overview' => $this->overview,
             'updated_by' => auth()->id(),

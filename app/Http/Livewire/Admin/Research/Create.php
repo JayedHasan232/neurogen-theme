@@ -13,6 +13,7 @@ class Create extends Component
 
     public $privacy = 1;
     public $title;
+    public $author;
     public $date;
     public $file;
     public $overview;
@@ -29,6 +30,7 @@ class Create extends Component
         $research = Research::create([
             'privacy' => $this->privacy,
             'title' => $this->title,
+            'author' => $this->author,
             'date' => $this->date ?? now(),
             'overview' => $this->overview,
             'created_by' => auth()->id(),

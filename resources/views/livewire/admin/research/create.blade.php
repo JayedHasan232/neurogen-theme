@@ -27,7 +27,16 @@
                     </span>
                 @enderror
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-3">
+                <label for="author">Author</label>
+                <input wire:model="author" class="form-control @error('author') is-invalid @enderror" type="text" id="author" placeholder="Author">
+                @error('author')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <div class="form-group col-md-3">
                 <label for="title">Title</label>
                 <input wire:model="title" class="form-control @error('title') is-invalid @enderror" type="text" id="title" placeholder="Title">
                 @error('title')
@@ -36,7 +45,7 @@
                     </span>
                 @enderror
             </div>
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-2">
                 <label for="date">Date</label>
                 <input wire:model="date" class="form-control @error('date') is-invalid @enderror" type="text" id="date" placeholder="Date">
                 @error('date')
@@ -45,7 +54,7 @@
                     </span>
                 @enderror
             </div>
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-2">
                 <label for="file">File</label>
                 <input wire:model="file" class="form-control @error('file') is-invalid @enderror" type="file" name="file" id="file">
                 @error('file')

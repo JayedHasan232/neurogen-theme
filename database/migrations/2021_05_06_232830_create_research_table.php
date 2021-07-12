@@ -16,8 +16,9 @@ class CreateResearchTable extends Migration
         Schema::create('research', function (Blueprint $table) {
             $table->id();
             $table->boolean('privacy')->default(true);
-            $table->string('title');
+            $table->string('author')->nullable();
             $table->string('date')->nullable();
+            $table->string('title');
             $table->text('overview');
             $table->text('source')->nullable();
 
