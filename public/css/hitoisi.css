@@ -1271,6 +1271,12 @@ a {
   }
 }
 
+.pharmacy-form {
+  border: 1px solid #ededed;
+  border-radius: 1em;
+  padding: 3em;
+}
+
 .jump {
   position: fixed;
   left: 0;
