@@ -50,12 +50,7 @@
                             <a class="sm-link" href="{{ route('app.welcome') }}">{{ __('Clinics') }}</a>
                             <ul class="childmenu">
                                 <li class="cm-item">
-                                    <a class="cm-link" href="#">{{ __('Neurodevelopmental Disorders') }}</a>
-                                    <ul class="childmenu2">
-                                        <li class="cm-item2">
-                                            <a class="cm-link2" href="{{ route('app.healthcare.team.index', 'doctors') }}">{{ __('Doctors') }}</a>
-                                        </li>
-                                    </ul>
+                                    <a class="cm-link" href="{{ route('app.healthcare.neurodevelopmental-disorders') }}">{{ __('Neurodevelopmental Disorders') }}</a>
                                 </li>
                                 <li class="cm-item">
                                     <a class="cm-link" href="#">{{ __('Oncology') }}</a>
