@@ -148,13 +148,6 @@ Route::namespace('App\Http\Livewire')->group(function()
             Route::get('edit/{id}', Edit::class)->name('edit');
         });
         
-        // Pharmacy
-        // Route::namespace('Pharmacy')->name('pharmacy.')->prefix('pharmacy')->group(function(){
-        //     Route::get('/', Index::class)->name('index');
-        //     Route::get('create', Create::class)->name('create');
-        //     Route::get('edit/{id}', Edit::class)->name('edit');
-        // });
-        
         // Site Informations
         Route::get('site-informations', SiteInfo::class)->name('site-info');
     });

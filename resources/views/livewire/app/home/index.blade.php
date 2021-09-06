@@ -33,7 +33,7 @@
     @livewire('app.home.circle-of-care')
     @livewire('app.home.appointment')
     @livewire('app.home.doctors')
-    @livewire('app.home.statistics')
+    {{--@livewire('app.home.statistics')--}}
     @livewire('app.home.faq')
     @livewire('app.contact.map')
 

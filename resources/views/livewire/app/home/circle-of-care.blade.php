@@ -1,9 +1,9 @@
 <section class="section home-circle-of-care">
     <div class="{{ env('BS_CONTAINER') }}">
         <h2 class="section-title">Evidence Based Healthcare</h2>
-        <p class="section-overview text-justify-center">
+        {{--<p class="section-overview text-justify-center">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa eos blanditiis labore, non iusto alias, eaque, deleniti doloribus qui id itaque nesciunt! Eos, hic recusandae consequatur quisquam voluptatem error maxime. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        </p>
+        </p>--}}
 
         <div class="row g-4">
             @foreach($services as $service)

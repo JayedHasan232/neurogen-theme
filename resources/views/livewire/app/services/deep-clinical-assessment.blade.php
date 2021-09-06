@@ -29,7 +29,7 @@
     <div class="{{ env('BS_CONTAINER') }}">
         <div class="row g-4">
             @foreach($services as $service)
-                @if($service->url == 'speech-and-language-therapy' || $service->url == 'occupational-therapy' || $service->url == 'physiotherapy')
+                @if($service->url == 'psychological-assessment' || $service->url == 'ados-2-test' || $service->url == 'adhd-screening' || $service->url == 'iq-test' || $service->url == 'behavior-modification-therapy')
                 <div class="col-sm-6 col-md-4">
                     <div class="card h-100">
                         <div class="image-frame">
