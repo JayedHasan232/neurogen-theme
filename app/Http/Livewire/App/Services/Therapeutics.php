@@ -3,16 +3,15 @@
 namespace App\Http\Livewire\App\Services;
 
 use Livewire\Component;
-
-use App\Models\Text;
+use App\Models\Service;
 
 class Therapeutics extends Component
 {
-    public $test;
+    public $services;
 
     public function mount()
     {
-        $this->test = Text::where('identifier', 'therapeutics')->firstOrFail();
+        $this->services = Service::where('privacy', 1)->get();
     }
 
     public function render()
