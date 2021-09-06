@@ -8,7 +8,7 @@
                 <div class="informations text-justify">
                     <h1 class="page-title">{{ $about->title }}</h1>
                     <p class="overview">{{ $about->overview }}</p>
-                    <h2 class="service-title">Circle of Care</h2>
+                    <h2 class="service-title">Evidence Based Healthcare</h2>
                     <ul class="services">
                         @foreach( explode(',', $about->circle) as $circle )
                         <li class="service-item">
