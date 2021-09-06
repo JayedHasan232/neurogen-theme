@@ -44,7 +44,7 @@
                     <a class="nav-link dropdown-toggle" href="{{ route('app.services') }}">{{ __('Healthcare Service') }}</a>
                     <ul class="submenu">
                         <li class="sm-item">
-                            {{--<a class="sm-link" href="{{ route('app.pharmacy') }}">{{ __('Pharmacy') }}</a>--}}
+                            <a class="sm-link" href="{{ route('app.pharmacy') }}">{{ __('Pharmacy') }}</a>
                         </li>
                         <li class="sm-item">
                             <a class="sm-link" href="{{ route('app.welcome') }}">{{ __('Clinics') }}</a>

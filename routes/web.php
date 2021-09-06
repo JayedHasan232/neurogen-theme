@@ -50,6 +50,9 @@ Route::namespace('App\Http\Livewire')->group(function()
         // Appointment
         Route::get('appointment', Appointment::class)->name('appointment');
 
+        // Appointment
+        Route::get('pharmacy', Pharmacy::class)->name('pharmacy');
+
         // About
         Route::get('about', About\Index::class)->name('about');
 

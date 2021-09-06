@@ -45,6 +45,7 @@
     <script src="{{ asset('js/hitoisi.js') }}"></script>
     
     @stack('scripts')
+    @stack('modals')
 
     @livewireScripts
 </body>
