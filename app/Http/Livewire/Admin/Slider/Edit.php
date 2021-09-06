@@ -55,9 +55,9 @@ class Edit extends Component
 
         if($this->image){
 
-            Storage::delete($this->item->image);
-            Storage::delete($this->item->image_medium);
-            Storage::delete($this->item->image_small);
+            Storage::delete($this->slider->image);
+            Storage::delete($this->slider->image_medium);
+            Storage::delete($this->slider->image_small);
 
             $image = $this->image;
             $dimension = (object) [

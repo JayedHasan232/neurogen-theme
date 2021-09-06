@@ -8,22 +8,16 @@
                 </svg>
             </a>
             <a href="#" class="me-2 text-muted text-capitalize">
-                {{ __( 'Healthcare' ) }}
+                {{ __( 'Our Team' ) }}
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
                 </svg>
             </a>
-            <a href="{{ route('app.healthcare.team.index', $member_type) }}" class="me-2 text-muted text-capitalize">
-                @if($type == 1)
-                    Doctors
-                @elseif($type == 2)
-                    Lab Personnel
-                @elseif($type == 3)
-                    Clinical Psychologists
-                @elseif($type == 4)
-                    Therapists
-                @elseif($type == 5)
-                    Nutritionists
+            <a href="{{ route('app.our-team.index', $member_type) }}" class="me-2 text-muted text-capitalize">
+                @if($type == 6)
+                    Executive Team
+                @elseif($type == 7)
+                    Scientific Advisory Team
                 @endif
             </a>
         </div>

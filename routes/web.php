@@ -16,6 +16,7 @@ Route::namespace('App\Http\Livewire')->group(function()
         // Healthcare Services
         Route::name('healthcare.')->prefix('healthcare')->group(function()
         {
+            Route::get('genetic-counseling', Services\GeneticCounseling::class)->name('genetic-counseling');
             Route::get('genetic-test', Services\GeneticTest::class)->name('genetic-test');
             Route::get('deep-clinical-assessment', Services\Dca::class)->name('deep-clinical-assessment');
             Route::get('therapeutics', Services\Therapeutics::class)->name('therapeutics');
@@ -50,6 +51,13 @@ Route::namespace('App\Http\Livewire')->group(function()
 
         // About
         Route::get('about', About\Index::class)->name('about');
+
+        // Our Team
+        Route::namespace('OurTeam')->prefix('our-team')->name('our-team.')->group(function()
+        {
+            Route::get('{type}', Index::class)->name('index');
+            Route::get('{type}/{url}', Show::class)->name('show');
+        });
 
         // Contact
         Route::get('contact', Contact\Index::class)->name('contact');

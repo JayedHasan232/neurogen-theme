@@ -1,9 +1,9 @@
-<section class="section home-faq">
+<section class="section home-faq" id="faq">
     <div class="{{ env('BS_CONTAINER') }}">
         <h2 class="section-title">FAQs</h2>
-        <p class="section-overview text-justify-center">
+        {{--<p class="section-overview text-justify-center">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa eos blanditiis labore, non iusto alias, eaque, deleniti doloribus qui id itaque nesciunt! Eos, hic recusandae consequatur quisquam voluptatem error maxime. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        </p>
+        </p>--}}
 
         <div class="row justify-content-center">
             <div class="col-md-10">

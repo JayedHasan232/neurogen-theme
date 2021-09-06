@@ -35,6 +35,8 @@
                     <option value="3">Psychologists</option>
                     <option value="4">Therapists</option>
                     <option value="5">Nutritionist</option>
+                    <option value="6">Executive Team</option>
+                    <option value="7">Scientific Advisory Team</option>
                 </select>
                 @error('type')
                     <span class="invalid-feedback" role="alert">

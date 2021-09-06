@@ -1,9 +1,9 @@
 <section class="section doctors">
     <div class="{{ env('BS_CONTAINER') }}">
         <h2 class="section-title">Our Doctors</h2>
-        <p class="section-overview text-justify-center">
+        {{--<p class="section-overview text-justify-center">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa eos blanditiis labore, non iusto alias, eaque, deleniti doloribus qui id itaque nesciunt! Eos, hic recusandae consequatur quisquam voluptatem error maxime. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        </p>
+        </p>--}}
 
         <div class="row g-4 justify-content-center">
             @foreach($doctors as $doctor)
@@ -14,7 +14,7 @@
                     </div>
                     <div class="card-body">
                         <div class="contents">
-                            <h3 class="title">Dr. {{ $doctor->name }}</h3>
+                            <h3 class="title">{{ $doctor->name }}</h3>
                             <h4 class="designation">{{ $doctor->designation }}</h4>
                             <h5 class="degrees">{{ $doctor->degrees }}</h5>
                         </div>
