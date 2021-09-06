@@ -1,7 +1,7 @@
 // $color: #2e368f;
 // $colorHover: #262d79;
-$color: #01B636;
-$colorHover: #15A752;
+$color: #01b636;
+$colorHover: #15a752;
 // $color: #009ABB;
 // $colorHover: #007C92;
 $radius: 1em;
@@ -383,30 +383,83 @@ a {
     .carousel-inner {
         .carousel-item {
             height: 435px;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            display: flex;
 
             @media only screen and (max-width: 767px) {
                 height: 25vh;
                 width: 100%;
             }
 
-            .box {
-                position: absolute;
-                height: 54%;
-                width: 28%;
-                background-color: rgba(255, 255, 255, 0.25);
-                border-radius: 1em;
-                overflow: hidden;
-                top: 50%;
-                left: 10%;
-                transform: translateY(-50%);
-                transition: $transition;
+            // .box {
+            //     position: absolute;
+            //     height: 54%;
+            //     width: 28%;
+            //     background-color: rgba(255, 255, 255, 0.25);
+            //     border-radius: 1em;
+            //     overflow: hidden;
+            //     top: 50%;
+            //     left: 10%;
+            //     transform: translateY(-50%);
+            //     transition: $transition;
 
-                &:hover {
-                    background-color: rgba(255, 255, 255, 0.75);
-                }
+            //     &:hover {
+            //         background-color: rgba(255, 255, 255, 0.75);
+            //     }
+
+            //     .title {
+            //         background-color: $color;
+            //         text-transform: capitalize;
+            //         padding: 15px;
+            //         color: #fff;
+            //         font-size: 20px;
+            //         line-height: 25px;
+            //     }
+            //     .body {
+            //         padding: 15px;
+            //         color: #000;
+            //         line-height: 1.25em;
+
+            //         .description {
+            //             display: block;
+            //         }
+            //     }
+
+            //     @media only screen and (max-width: 767px) {
+            //         height: 100px;
+            //         width: 175px;
+            //         border-radius: 0.5em;
+
+            //         .title {
+            //             font-weight: normal;
+            //             font-size: 12px !important;
+            //             line-height: 12px !important;
+            //             border-bottom: none !important;
+            //             padding: 7.5px !important;
+            //         }
+            //         .body {
+            //             color: #fff;
+            //             line-height: 1em !important;
+            //             padding: 7.5px !important;
+
+            //             .description {
+            //                 display: none !important;
+            //             }
+
+            //             .btn {
+            //                 width: 75px !important;
+            //                 font-size: 8px !important;
+            //                 padding: 5px 0 !important;
+            //                 margin: 8px 0 0 0 !important;
+            //             }
+            //         }
+            //     }
+            // }
+            .box {
+                height: 100%;
+                width: 40%;
+                background-color: #ededed;
+                overflow: hidden;
+                transition: $transition;
 
                 .title {
                     background-color: $color;
@@ -426,35 +479,42 @@ a {
                     }
                 }
 
-                @media only screen and (max-width: 767px) {
-                    height: 100px;
-                    width: 175px;
-                    border-radius: 0.5em;
+                // @media only screen and (max-width: 767px) {
+                //     height: 100px;
+                //     width: 175px;
+                //     border-radius: 0.5em;
+                //     position: absolute;
+                //     background-color: rgba(255, 255, 255, 0.25);
+                //     border-radius: 1em;
+                //     overflow: hidden;
+                //     top: 50%;
+                //     left: 10%;
+                //     transform: translateY(-50%);
 
-                    .title {
-                        font-weight: normal;
-                        font-size: 12px !important;
-                        line-height: 12px !important;
-                        border-bottom: none !important;
-                        padding: 7.5px !important;
-                    }
-                    .body {
-                        color: #fff;
-                        line-height: 1em !important;
-                        padding: 7.5px !important;
+                //     .title {
+                //         font-weight: normal;
+                //         font-size: 12px !important;
+                //         line-height: 12px !important;
+                //         border-bottom: none !important;
+                //         padding: 7.5px !important;
+                //     }
+                //     .body {
+                //         color: #fff;
+                //         line-height: 1em !important;
+                //         padding: 7.5px !important;
 
-                        .description {
-                            display: none !important;
-                        }
+                //         .description {
+                //             display: none !important;
+                //         }
 
-                        .btn {
-                            width: 75px !important;
-                            font-size: 8px !important;
-                            padding: 5px 0 !important;
-                            margin: 8px 0 0 0 !important;
-                        }
-                    }
-                }
+                //         .btn {
+                //             width: 75px !important;
+                //             font-size: 8px !important;
+                //             padding: 5px 0 !important;
+                //             margin: 8px 0 0 0 !important;
+                //         }
+                //     }
+                // }
             }
         }
     }
