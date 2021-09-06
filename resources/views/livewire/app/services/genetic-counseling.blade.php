@@ -20,7 +20,7 @@
                 </svg>
             </a>
             <h1 class="me-2 text-accent text-capitalize">
-                {{ __('Genetic Test') }}
+                {{ __('Genetic Counseling') }}
             </h1>
         </div>
     </div>
