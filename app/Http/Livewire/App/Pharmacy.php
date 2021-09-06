@@ -54,12 +54,12 @@ class Pharmacy extends Component
             'phone' => 'required',
             'email' => 'required|email',
             'address' => 'required',
-            'remark' => 'required',
             'payment_method' => 'required',
         ]);
         
         $data = [
             'medicines' => $this->medicines,
+            'prescription' => $this->prescription,
             'name' => $this->name,
             'phone' => $this->phone,
             'email' => $this->email,
@@ -77,9 +77,7 @@ class Pharmacy extends Component
         }
 
         Mail::to('jayedhasan232@gmail.com')
-            ->send(new Medicine($data), function ($message) {            
-                $message->attach($this->prescription);
-            });
+            ->send(new Medicine($data));
 
         $this->reset();
         $this->dataLoader();

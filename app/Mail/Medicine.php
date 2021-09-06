@@ -13,6 +13,7 @@ class Medicine extends Mailable
 
     // Properties
     public $medicines;
+    public $prescription;
     public $name, $phone, $email, $address, $aggreement, $remark;
     public $registered_patient;
     public $reference, $employee_name, $employee_id;
@@ -21,6 +22,7 @@ class Medicine extends Mailable
     public function __construct($data)
     {
         $this->medicines = $data['medicines'];
+        $this->prescription = $data['prescription'];
         $this->name = $data['name'];
         $this->phone = $data['phone'];
         $this->email = $data['email'];
@@ -37,6 +39,8 @@ class Medicine extends Mailable
     {
         return $this->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'))
                     ->subject("Pharmacy: medicine")
-                    ->markdown('emails.medicine');
+                    ->markdown('emails.medicine')
+                    // ->attach($this->prescription)
+                    ;
     }
 }
