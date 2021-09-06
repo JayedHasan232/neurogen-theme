@@ -11,7 +11,7 @@ use App\Models\Blog;
 
 class Appointment extends Component
 {
-    public $info, $blogs;    
+    public $info, $blogs;
     public $name, $phone, $email, $date, $message;
     
     public function mount()

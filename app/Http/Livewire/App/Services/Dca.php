@@ -3,16 +3,15 @@
 namespace App\Http\Livewire\App\Services;
 
 use Livewire\Component;
-
-use App\Models\Text;
+use App\Models\Service;
 
 class Dca extends Component
 {
-    public $test;
+    public $services;
 
     public function mount()
     {
-        $this->test = Text::where('identifier', 'deep-clinical-assessment')->firstOrFail();
+        $this->services = Service::where('privacy', 1)->get();
     }
 
     public function render()
