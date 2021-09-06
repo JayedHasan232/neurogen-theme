@@ -27,8 +27,7 @@
                     @endauth
                 </div>
             </div>
-            {{--<img src="{{ asset('storage/' . $slider->image) }}" class="d-block w-100 h-100" alt="">--}}
-            <img src="https://www.neurogenbd.com/storage/images/slider/SuVJxVGXeCisnc6HONBPHaLWvFTHx7OSt4KC2HEn.jpg" class="d-block w-100 h-100" alt="">
+            <img src="{{ asset('storage/' . $slider->image) }}" class="d-block w-100 h-100" alt="">
         </div>
         @endforeach
     </div>
