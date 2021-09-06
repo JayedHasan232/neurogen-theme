@@ -63,11 +63,20 @@
                 </form>
             </div>
             <div class="col-md-6">
-                <div class="list-group" style="max-height:400px; overflow-y:scroll">
+                <div style="max-height:400px; overflow-y:scroll">
                     @foreach($blogs as $blog)
-                    <a href="{{ route('app.blog.show', $blog->url) }}" class="list-group-item list-group-item-action" aria-current="true">
-                        <h5 class="mb-1">{{ $blog->title }}</h5>
-                        <p class="mb-1 text-muted">{!! Str::limit(strip_tags($blog->article), 150, '...') !!}</p>
+                    <a href="{{ route('app.blog.show', $blog->url) }}" class="card mb-1">
+                        <div class="row g-0">
+                            <div class="col-4">
+                                <img style="height:100%" src="{{ asset('storage/' . ($blog->image_medium ?? $blog->image) ) }}" class="img-fluid rounded-start" alt="{{ $blog->title }}">
+                            </div>
+                            <div class="col-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ Str::limit(strip_tags($blog->title), 30, '...') }}</h5>
+                                    <p class="card-text text-muted">{!! Str::limit(strip_tags($blog->article), 75, '...') !!}</p>
+                                </div>
+                            </div>
+                        </div>
                     </a>
                     @endforeach
                 </div>
