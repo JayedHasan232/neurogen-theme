@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Log;
 
 class Medicine extends Mailable
 {
@@ -40,7 +41,6 @@ class Medicine extends Mailable
         return $this->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'))
                     ->subject("Pharmacy: medicine")
                     ->markdown('emails.medicine')
-                    // ->attach($this->prescription)
-                    ;
+                    ->attach(public_path('storage/' . $this->prescription));
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\App;
 
+use Storage;
 use Livewire\Component;
 use Mail;
 use App\Mail\Medicine;
@@ -56,10 +57,17 @@ class Pharmacy extends Component
             'address' => 'required',
             'payment_method' => 'required',
         ]);
+
+        if($this->aggreement != 'on'){
+            return back()->with('warning', 'You should accept the aggreement!');
+        }
         
+        // Storing image temporarily
+        $prescription = $this->prescription->store('images/email_temp');
+
         $data = [
             'medicines' => $this->medicines,
-            'prescription' => $this->prescription,
+            'prescription' => $prescription,
             'name' => $this->name,
             'phone' => $this->phone,
             'email' => $this->email,
@@ -72,12 +80,10 @@ class Pharmacy extends Component
             'payment_method' => $this->payment_method,
         ];
 
-        if($this->aggreement != 'on'){
-            return back()->with('warning', 'You should accept the aggreement!');
-        }
+        Mail::to('info@neurogenbd.com')->send(new Medicine($data));
 
-        Mail::to('jayedhasan232@gmail.com')
-            ->send(new Medicine($data));
+        // Deleting temporarily stored image
+        Storage::delete($prescription);
 
         $this->reset();
         $this->dataLoader();
