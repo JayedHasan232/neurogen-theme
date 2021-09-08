@@ -27,8 +27,6 @@
                     @endauth
                 </div>
             </div>
-            {{--<img src="{{ asset('storage/' . $slider->image) }}" class="carousel-image" alt="">
-            <img src="https://www.neurogenbd.com/storage/images/slider/03-1630997396.jpg" class="carousel-image" alt="">--}}
         </div>
         @endforeach
     </div>
