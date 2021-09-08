@@ -375,7 +375,6 @@ a {
 
 .carousel .carousel-inner .carousel-item {
   height: 435px;
-  display: flex;
 }
 
 @media only screen and (max-width: 767px) {

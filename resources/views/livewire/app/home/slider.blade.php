@@ -8,7 +8,7 @@
 
     <div class="carousel-inner">
         @foreach($sliders as $slider)
-        <div class="carousel-item {{ $loop->index == 0 ? 'active' : '' }}">
+        <div class="carousel-item d-flex {{ $loop->index == 0 ? 'active' : '' }}">
             <div class="box d-none d-md-block">
                 <div class="title">{{ Str::limit( $slider->title, 50, '...' ) ?? 'Slider title' }}</div>
                 <div class="body">
