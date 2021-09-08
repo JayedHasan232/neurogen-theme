@@ -72,7 +72,7 @@
 
     @if( $relatedServices->count() )
     <section class="{{ env('BS_CONTAINER') }} py-5">
-        <h2 class="d-block mb-5">Other Services</h2>
+        <h2 class="d-block mb-5">Evidence Based Healthcare</h2>
         <div class="row g-4">
             @foreach($relatedServices as $service)
             <div class="col-sm-6 col-md-4">
