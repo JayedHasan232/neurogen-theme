@@ -51,7 +51,7 @@
             @if($type == 1)
             <div class="form-group col-md-4">
                 <label for="images">Image(s)</label>
-                <input wire:model="images" class="form-control @error('images') is-invalid @enderror" type="file" name="images" id="images" multiple>
+                <input wire:model="images" class="form-control @error('images') is-invalid @enderror" type="file" name="images" id="images">
                 @error('images')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
