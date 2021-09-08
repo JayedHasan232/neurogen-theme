@@ -35,6 +35,7 @@
             <div class="row g-4 mb-2">
                 <div class="col-md-4">
                     <div class="form-group">
+                        @if($index == 0)<label for="name">Item Name</label>@endif
                         <input wire:model="medicines.{{ $index }}.name" type="text" class="form-control" placeholder="Item Name" required/>
                         @error('medicines'.$index.'name') <span class="text-danger error">{{ $message }}</span>@enderror
                     </div>
@@ -42,16 +43,18 @@
 
                 <div class="col-md-2">
                     <div class="form-group">
+                        @if($index == 0)<label for="name">Quantity</label>@endif
                         <select wire:model="medicines.{{ $index }}.quantity" class="form-control" required>
                             @for($quantity=1; $quantity <= 10; $quantity++)
                                 <option value="{{ $quantity }}">{{ $quantity }}</option>
-                                @endfor
+                            @endfor
                         </select>
                     </div>
                 </div>
                 
                 <div class="col-md-4">
                     <div class="form-group">
+                        @if($index == 0)<label for="name">Unit</label>@endif
                         <select wire:model="medicines.{{ $index }}.unit" class="form-control" required>
                             <option value="strip">Strip</option>
                             <option value="bottol">Bottol</option>
