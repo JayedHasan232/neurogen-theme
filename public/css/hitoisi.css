@@ -375,6 +375,9 @@ a {
 
 .carousel .carousel-inner .carousel-item {
   height: 435px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 @media only screen and (max-width: 767px) {
@@ -385,11 +388,20 @@ a {
 }
 
 .carousel .carousel-inner .carousel-item .box {
-  height: 100%;
-  width: 40%;
-  background-color: #ededed;
+  position: absolute;
+  height: 54%;
+  width: 28%;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 1em;
   overflow: hidden;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
   transition: 0.3s;
+}
+
+.carousel .carousel-inner .carousel-item .box:hover {
+  background-color: rgba(255, 255, 255, 0.75);
 }
 
 .carousel .carousel-inner .carousel-item .box .title {
@@ -409,6 +421,35 @@ a {
 
 .carousel .carousel-inner .carousel-item .box .body .description {
   display: block;
+}
+
+@media only screen and (max-width: 767px) {
+  .carousel .carousel-inner .carousel-item .box {
+    height: 100px;
+    width: 175px;
+    border-radius: 0.5em;
+  }
+  .carousel .carousel-inner .carousel-item .box .title {
+    font-weight: normal;
+    font-size: 12px !important;
+    line-height: 12px !important;
+    border-bottom: none !important;
+    padding: 7.5px !important;
+  }
+  .carousel .carousel-inner .carousel-item .box .body {
+    color: #fff;
+    line-height: 1em !important;
+    padding: 7.5px !important;
+  }
+  .carousel .carousel-inner .carousel-item .box .body .description {
+    display: none !important;
+  }
+  .carousel .carousel-inner .carousel-item .box .body .btn {
+    width: 75px !important;
+    font-size: 8px !important;
+    padding: 5px 0 !important;
+    margin: 8px 0 0 0 !important;
+  }
 }
 
 .carousel .carousel-indicators {

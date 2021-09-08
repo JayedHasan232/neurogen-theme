@@ -8,7 +8,7 @@
 
     <div class="carousel-inner">
         @foreach($sliders as $slider)
-        <div class="carousel-item d-flex {{ $loop->index == 0 ? 'active' : '' }}">
+        <div class="carousel-item d-flex {{ $loop->index == 0 ? 'active' : '' }}" style="background-image: url('https://www.neurogenbd.com/storage/images/slider/03-1630997396.jpg')">
             <div class="box d-none d-md-block">
                 <div class="title">{{ Str::limit( $slider->title, 50, '...' ) ?? 'Slider title' }}</div>
                 <div class="body">
@@ -27,7 +27,8 @@
                     @endauth
                 </div>
             </div>
-            <img src="{{ asset('storage/' . $slider->image) }}" class="d-block w-100 h-100" alt="">
+            {{--<img src="{{ asset('storage/' . $slider->image) }}" class="carousel-image" alt="">
+            <img src="https://www.neurogenbd.com/storage/images/slider/03-1630997396.jpg" class="carousel-image" alt="">--}}
         </div>
         @endforeach
     </div>
