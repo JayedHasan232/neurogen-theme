@@ -36,9 +36,9 @@ class Create extends Component
             'name' => 'required',
             'url' => 'required',
             'designation' => 'required',
-            'degrees' => 'required',
+            'degrees' => '',
             'email' => 'email',
-            'summary' => 'required',
+            'summary' => '',
         ]);
 
         
