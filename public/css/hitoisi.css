@@ -374,7 +374,7 @@ a {
 }
 
 .carousel .carousel-inner .carousel-item {
-  height: 435px;
+  height: 485px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -454,7 +454,7 @@ a {
 
 .carousel .carousel-indicators {
   position: absolute;
-  bottom: 0;
+  bottom: 2em;
 }
 
 .carousel .carousel-indicators li {
