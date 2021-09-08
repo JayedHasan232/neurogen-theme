@@ -20,75 +20,84 @@ class Create extends Component
 
     public function store()
     {
-        // $this->validate([
-        //     'privacy' => 'required',
-        //     'type' => 'required',
-        // ]);
-
-        // if($this->type == 1){
-        //     $this->validate([
-        //         'images' => 'required|image',
-        //     ]);
-        // }else{
-        //     $this->validate([
-        //         'video_link' => 'required',
-        //     ]);
-        // }
+        $this->validate([
+            'privacy' => 'required',
+            'type' => 'required',
+        ]);
 
         if($this->type == 1){
+            $this->validate([
+                'images' => 'required|image',
+            ]);
+        }else{
+            $this->validate([
+                'video_link' => 'required',
+            ]);
+        }
 
-            foreach ($this->images as $image) {
+        if($this->type == 1){
+        
+            $entry = Gallery::create([
+                'privacy' => $this->privacy,
+                'type' => $this->type,
+                'title' => $this->title,
+                'created_by' => auth()->id(),
+                'created_at' => now(),
+            ]);
 
-                $entry = Gallery::create([
-                    'privacy' => $this->privacy,
-                    'type' => $this->type,
-                    'title' => $this->title,
-                    'created_by' => auth()->id(),
-                    'created_at' => now(),
-                ]);
-                
-                $dimension = (object) [
-                    'medium' => (object) [
-                        'width' => 356,
-                        'height' => 250,
-                    ],
-                    'small' => (object) [
-                        'width' => 156,
-                        'height' => 116,
-                    ]
-                ];
-                $path = "gallery";
+            $image = $this->image;
+            $dimension = (object) [
+                'medium' => (object) [
+                    'width' => 356,
+                    'height' => 250,
+                ],
+                'small' => (object) [
+                    'width' => 156,
+                    'height' => 116,
+                ]
+            ];
+            $path = "gallery";
+
+            $result = Image::store($image, $dimension, $path);
+
+            $entry->update([
+                "source" => $result->image,
+                "image_medium" => $result->image_medium,
+                "image_small" => $result->image_small,
+            ]);
+
+            // Enable on demand
+            // foreach ($this->images as $image) {
+
+            //     $entry = Gallery::create([
+            //         'privacy' => $this->privacy,
+            //         'type' => $this->type,
+            //         'title' => $this->title,
+            //         'created_by' => auth()->id(),
+            //         'created_at' => now(),
+            //     ]);
+
+            //     $dimension = (object) [
+            //         'medium' => (object) [
+            //             'width' => 356,
+            //             'height' => 250,
+            //         ],
+            //         'small' => (object) [
+            //             'width' => 156,
+            //             'height' => 116,
+            //         ]
+            //     ];
+            //     $path = "gallery";
     
-                $result = Image::store($image, $dimension, $path);
+            //     $result = Image::store($image, $dimension, $path);
     
-                $entry->update([
-                    "source" => $result->image,
-                    "image_medium" => $result->image_medium,
-                    "image_small" => $result->image_small,
-                ]);
+            //     $entry->update([
+            //         "source" => $result->image,
+            //         "image_medium" => $result->image_medium,
+            //         "image_small" => $result->image_small,
+            //     ]);
     
-            }
-
-            // $image = $this->image;
-            // $dimension = (object) [
-            //     'medium' => (object) [
-            //         'width' => 356,
-            //         'height' => 250,
-            //     ],
-            //     'small' => (object) [
-            //         'width' => 156,
-            //         'height' => 116,
-            //     ]
-            // ];
-            // $path = "gallery";
-
-            // $result = Image::store($image, $dimension, $path);
-
-            // $entry->update([
-            //     "source" => $result->image,
-            //     "image_medium" => $result->image_medium,
-            //     "image_small" => $result->image_small,
-            // ]);
+            // }
             
         }else{
             Gallery::create([
