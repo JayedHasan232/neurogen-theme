@@ -44,9 +44,6 @@
                     <a class="nav-link dropdown-toggle" href="{{ route('app.services') }}">{{ __('Healthcare Service') }}</a>
                     <ul class="submenu">
                         <li class="sm-item">
-                            <a class="sm-link" href="{{ route('app.pharmacy') }}">{{ __('Pharmacy') }}</a>
-                        </li>
-                        <li class="sm-item">
                             <a class="sm-link" href="{{ route('app.welcome') }}">{{ __('Clinics') }}</a>
                             <ul class="childmenu">
                                 <li class="cm-item">
@@ -64,13 +61,13 @@
                             <a class="sm-link" href="#">{{ __('Genetics and Genomic Medicine Centre') }}</a>
                             <ul class="childmenu">
                                 <li class="cm-item">
+                                    <a class="cm-link" href="{{ route('app.healthcare.genetic-test') }}">{{ __('Genetic Tests') }}</a>
+                                </li>
+                                <li class="cm-item">
                                     <a class="cm-link" href="{{ route('app.healthcare.genetic-counseling') }}">{{ __('Genetic Counseling') }}</a>
                                 </li>
                                 <li class="cm-item">
                                     <a class="cm-link" href="{{ route('app.healthcare.team.index', 'lab-personnel') }}">{{ __('Genetic Laboratory Personnel') }}</a>
-                                </li>
-                                <li class="cm-item">
-                                    <a class="cm-link" href="{{ route('app.healthcare.genetic-test') }}">{{ __('Genetic Tests') }}</a>
                                 </li>
                             </ul>
                         </li>
@@ -93,6 +90,9 @@
                                     <a class="cm-link" href="{{ route('app.healthcare.team.index', 'nutritionists') }}">{{ __('Nutritional Guidance') }}</a>
                                 </li>
                             </ul>
+                        </li>
+                        <li class="sm-item">
+                            <a class="sm-link" href="{{ route('app.pharmacy') }}">{{ __('Pharmacy') }}</a>
                         </li>
                     </ul>
                 </li>
