@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="shortcut icon" href="https://demo.hitoisi.com/storage/images/resources/TAcDifi1Jh1eREpYQlqm33Hr8dHVLiKO73gVZGP4.png" type="image/x-icon">
+    <link rel="shortcut icon" href="" type="image/x-icon">
     <link rel="canonical" href="{{ url()->current() }}" />
     <meta name="theme-color" content="#262d79">
     <meta name="language" content="English">
