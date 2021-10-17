@@ -15,7 +15,7 @@
     <div class="body">
 
         <div class="row g-3 mb-4">
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-3">
                 <label for="privacy">Privacy</label>
                 <select wire:model="privacy" class="form-control @error('privacy') is-invalid @enderror">
                     <option value="1">Visible</option>
@@ -45,7 +45,7 @@
                     </span>
                 @enderror
             </div>
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-3">
                 <label for="date">Date</label>
                 <input wire:model="date" class="form-control @error('date') is-invalid @enderror" type="text" id="date" placeholder="Date">
                 @error('date')
@@ -54,7 +54,7 @@
                     </span>
                 @enderror
             </div>
-            <div class="form-group col-md-2">
+            <div class="form-group col-12">
                 <label for="source">Source</label>
                 <input wire:model="source" class="form-control @error('source') is-invalid @enderror" type="text" name="source" id="source">
                 @error('source')
