@@ -64,10 +64,10 @@
                                     <a class="cm-link" href="{{ route('app.healthcare.genetic-test') }}">{{ __('Genetic Tests') }}</a>
                                 </li>
                                 <li class="cm-item">
-                                    <a class="cm-link" href="{{ route('app.healthcare.genetic-counseling') }}">{{ __('Genetic Counseling') }}</a>
+                                    <a class="cm-link" href="{{ route('app.healthcare.team.index', 'lab-personnel') }}">{{ __('Genetic Laboratory Personnel') }}</a>
                                 </li>
                                 <li class="cm-item">
-                                    <a class="cm-link" href="{{ route('app.healthcare.team.index', 'lab-personnel') }}">{{ __('Genetic Laboratory Personnel') }}</a>
+                                    <a class="cm-link" href="{{ route('app.healthcare.genetic-counseling') }}">{{ __('Genetic Counseling') }}</a>
                                 </li>
                             </ul>
                         </li>
