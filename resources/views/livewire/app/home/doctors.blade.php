@@ -5,7 +5,7 @@
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa eos blanditiis labore, non iusto alias, eaque, deleniti doloribus qui id itaque nesciunt! Eos, hic recusandae consequatur quisquam voluptatem error maxime. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
         </p>--}}
 
-        <div class="row g-4 justify-content-center">
+        <div class="row g-4 justify-content-center doctorSlider">
             @foreach($doctors as $doctor)
             <div class="col-sm-6 col-md-3">
                 <div class="card h-100">
