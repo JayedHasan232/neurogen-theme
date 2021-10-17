@@ -3,22 +3,17 @@
 namespace App\Http\Livewire\Admin\Research;
 
 use Livewire\Component;
-use Livewire\WithFileUploads;
-
-use Storage;
 use App\Models\Research;
 
 class Edit extends Component
 {
-    use WithFileUploads;
-
     public $research;
 
     public $privacy;
     public $title;
     public $author;
     public $date;
-    public $file;
+    public $source;
     public $overview;
 
     public function mount($id)
@@ -29,6 +24,7 @@ class Edit extends Component
         $this->title = $this->research->title;
         $this->author = $this->research->author;
         $this->date = $this->research->date;
+        $this->source = $this->research->source;
         $this->overview = $this->research->overview;
     }
 
@@ -37,6 +33,7 @@ class Edit extends Component
         $this->validate([
             'privacy' => 'required',
             'title' => 'string',
+            'source' => 'string',
             'overview' => 'string',
         ]);
 
@@ -45,18 +42,11 @@ class Edit extends Component
             'title' => $this->title,
             'author' => $this->author,
             'date' => $this->date,
+            'source' => $this->source,
             'overview' => $this->overview,
             'updated_by' => auth()->id(),
             'updated_at' => now(),
         ]);
-
-        if($this->file){
-
-            Storage::delete($this->research->source);
-            
-            $this->research->source = $this->file->store('files/research');
-            $this->research->save();
-        }
 
         return back()->with('success', 'Success!');
     }

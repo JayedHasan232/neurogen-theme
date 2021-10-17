@@ -3,19 +3,15 @@
 namespace App\Http\Livewire\Admin\Research;
 
 use Livewire\Component;
-use Livewire\WithFileUploads;
-
 use App\Models\Research;
 
 class Create extends Component
 {
-    use WithFileUploads;
-
     public $privacy = 1;
     public $title;
     public $author;
     public $date;
-    public $file;
+    public $source;
     public $overview;
 
     public function store()
@@ -23,7 +19,7 @@ class Create extends Component
         $this->validate([
             'privacy' => 'required',
             'title' => 'string',
-            'file' => 'required',
+            'source' => 'required',
             'overview' => 'string',
         ]);
 
@@ -32,15 +28,11 @@ class Create extends Component
             'title' => $this->title,
             'author' => $this->author,
             'date' => $this->date ?? now(),
+            'source' => $this->source,
             'overview' => $this->overview,
             'created_by' => auth()->id(),
             'created_at' => now(),
         ]);
-
-        if($research && $this->file){
-            $research->source = $this->file->store('files/research');
-            $research->save();
-        }
             
         $this->reset();
 

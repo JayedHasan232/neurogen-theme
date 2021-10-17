@@ -55,9 +55,9 @@
                 @enderror
             </div>
             <div class="form-group col-md-2">
-                <label for="file">File</label>
-                <input wire:model="file" class="form-control @error('file') is-invalid @enderror" type="file" name="file" id="file">
-                @error('file')
+                <label for="source">Source</label>
+                <input wire:model="source" class="form-control @error('source') is-invalid @enderror" type="text" name="source" id="source">
+                @error('source')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
