@@ -11,12 +11,12 @@ $(document).ready(function () {
         prevArrow: "<button type='button' class='btnLeft'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
         nextArrow: "<button type='button' class='btnRight'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
         infinite: true,
-        slidesToShow: 3,
-        slidesPerRow: 3,
+        slidesToShow: 4,
+        slidesPerRow: 4,
         slidesToScroll: 1,
-        speed: 250,
+        speed: 500,
         autoplay: true,
-        autoplaySpeed: 1500,
+        autoplaySpeed: 2500,
         fade: false,
         cssEase: 'linear',
         responsive: [{
@@ -70,35 +70,34 @@ $(document).ready(function () {
         return false;
     });
 
-
     // Animated Counter
-    $(window).scroll(startCounter);
-    function startCounter() {
+    // $(window).scroll(startCounter);
+    // function startCounter() {
 
-        if (window.location.pathname == "/") {
-            var statistics = $("#home-statistics");
-            var position = Math.round(statistics.position().top);
-            var height = Math.round(statistics.outerHeight());
+    //     if (window.location.pathname == "/") {
+    //         var statistics = $("#home-statistics");
+    //         var position = Math.round(statistics.position().top);
+    //         var height = Math.round(statistics.outerHeight());
 
-            if ($(window).scrollTop() > (position - height)) {
+    //         if ($(window).scrollTop() > (position - height)) {
 
-                $(window).off("scroll", startCounter);
-                $('.statistics-counter').each(function () {
-                    var $this = $(this);
-                    jQuery({
-                        Counter: 0
-                    }).animate({
-                        Counter: $this.text()
-                    }, {
-                        duration: 5000,
-                        easing: 'swing',
-                        step: function () {
-                            $this.text(Math.ceil(this.Counter));
-                        }
-                    });
-                });
-            }
-        }
-    }
+    //             $(window).off("scroll", startCounter);
+    //             $('.statistics-counter').each(function () {
+    //                 var $this = $(this);
+    //                 jQuery({
+    //                     Counter: 0
+    //                 }).animate({
+    //                     Counter: $this.text()
+    //                 }, {
+    //                     duration: 5000,
+    //                     easing: 'swing',
+    //                     step: function () {
+    //                         $this.text(Math.ceil(this.Counter));
+    //                     }
+    //                 });
+    //             });
+    //         }
+    //     }
+    // }
 
 });
