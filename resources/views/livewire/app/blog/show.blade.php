@@ -1,3 +1,22 @@
+@push('metainfo')
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="fb:app_id" content="">
+    <meta property="og:url" content="{{ URL::current() }}">
+    <meta property="og:title" content="{{ $blog->meta_title ?? '' }} - {{ config('app.name') }}">
+    <meta property="og:description" content="{{ $blog->meta_description }}">
+    <meta property="og:image" content='{{ asset("storage/$blog->image") }}'>
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ URL::current() }}">
+    <meta property="twitter:site" content="@neurogenbd">
+    <meta property="twitter:title" content="{{ $blog->meta_title ?? '' }} - {{ config('app.name') }}">
+    <meta property="twitter:description" content="{{ $blog->meta_description }}">
+    <meta property="twitter:creator" content="@neurogenbd">
+    <meta property="twitter:image" content='{{ asset("storage/$blog->image") }}'>
+@endpush
+
 <article>
     <section class="py-5 bg-light">
         <div class="{{ env('BS_CONTAINER') }}">
