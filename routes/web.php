@@ -142,6 +142,12 @@ Route::namespace('App\Http\Livewire')->group(function()
             Route::get('edit/{id}', Edit::class)->name('edit');
         });
         
+        // Medicine
+        Route::namespace('Medicine')->name('medicine.')->prefix('medicine')->group(function(){
+            Route::get('create', Create::class)->name('create');
+            Route::get('edit/{id}', Edit::class)->name('edit');
+        });
+        
         // About
         Route::get('about', About\Index::class)->name('about');
         

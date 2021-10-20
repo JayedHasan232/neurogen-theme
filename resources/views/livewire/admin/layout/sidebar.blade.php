@@ -62,6 +62,11 @@
             <a href="{{ route('admin.research.create') }}" class="sb-link">Research</a>
         </li>
 
+        <!-- Medicine -->
+        <li class="sb-item">
+            <a href="{{ route('admin.medicine.create') }}" class="sb-link">Medicine</a>
+        </li>
+
         <!-- About -->
         <li class="sb-item" id="items">
             <a href="{{ route('admin.about') }}" class="sb-link">About Page</a>
