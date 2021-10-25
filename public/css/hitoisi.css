@@ -1314,8 +1314,36 @@ a {
 
 .pharmacy-form {
   border: 1px solid #ededed;
-  border-radius: 1em;
   padding: 3em;
+}
+
+.medicine {
+  border-radius: 1em;
+  overflow: hidden;
+  text-align: center;
+}
+
+.medicine .image-frame {
+  height: 200px;
+  display: flex;
+  place-items: center;
+  overflow: hidden;
+}
+
+.medicine .title {
+  text-align: center;
+}
+
+.medicine .price {
+  margin: 0.75em 0;
+  font-size: 0.75em;
+  text-transform: capitalize;
+  background-color: #01b636;
+  color: #fff;
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  border-radius: 0.5em;
+  transition: 0.3s;
 }
 
 .jump {

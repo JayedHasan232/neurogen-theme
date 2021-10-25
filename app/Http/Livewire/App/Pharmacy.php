@@ -6,6 +6,7 @@ use Storage;
 use Livewire\Component;
 use Mail;
 use App\Mail\Medicine;
+use App\Models\Medicine as MedicineData;
 use Livewire\WithFileUploads;
 
 class Pharmacy extends Component
@@ -13,6 +14,8 @@ class Pharmacy extends Component
     use WithFileUploads;
 
     // Properties
+    public $medicines_data;
+
     public $medicines;
     public $prescription;
     public $name, $phone, $email, $address, $aggreement, $remark;
@@ -27,6 +30,8 @@ class Pharmacy extends Component
 
     public function dataLoader()
     {
+        $this->medicines_data = MedicineData::all();
+
         $this->medicines = [
             ['name' => '', 'quantity' => 1, 'unit' => 'strip']
         ];
