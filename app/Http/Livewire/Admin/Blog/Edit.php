@@ -8,9 +8,12 @@ use Str;
 use App\Models\Blog;
 use App\Models\BlogCategory as Category;
 use App\Models\BlogSubCategory as SubCategory;
+use Livewire\WithFileUploads;
 
 class Edit extends Component
-{
+{   
+    use WithFileUploads;
+    
     public $blog;
     public $categories;
     public $subcategories = [];

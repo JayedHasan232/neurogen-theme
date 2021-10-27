@@ -7,9 +7,12 @@ use Livewire\Component;
 use Str;
 use App\Models\BlogCategory as Category;
 use App\Models\BlogSubCategory as SubCategory;
+use Livewire\WithFileUploads;
 
 class Create extends Component
-{    
+{   
+    use WithFileUploads;
+    
     public $categories;
     public $subcategories = [];
 
