@@ -1341,6 +1341,37 @@ a {
     border: 1px solid #ededed;
     padding: 3em;
 }
+.prescription-uploader{
+    border: 2px dashed $color!important;
+    border-radius: 1em;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    label{
+        height: 100%;
+        width: 100%;
+        padding: 2em;
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        svg{
+            height: 4em;
+            display: block;
+            color: $color;
+        }
+    }
+
+    input{
+        display: none;
+    }
+}
 .medicine{
     border-radius: 1em;
     overflow: hidden;

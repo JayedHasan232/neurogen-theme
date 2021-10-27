@@ -1317,6 +1317,36 @@ a {
   padding: 3em;
 }
 
+.prescription-uploader {
+  border: 2px dashed #01b636 !important;
+  border-radius: 1em;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prescription-uploader label {
+  height: 100%;
+  width: 100%;
+  padding: 2em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.prescription-uploader label svg {
+  height: 4em;
+  display: block;
+  color: #01b636;
+}
+
+.prescription-uploader input {
+  display: none;
+}
+
 .medicine {
   border-radius: 1em;
   overflow: hidden;
