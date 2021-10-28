@@ -16,7 +16,8 @@ class CreateServicesTable extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->boolean('privacy')->default(true);
-            $table->smallInteger('position')->nullable();
+            $table->smallInteger('position')->default(0);
+            $table->string('type')->nullable();
             $table->string('title');
             $table->string('url');
             $table->text('overview')->nullable();

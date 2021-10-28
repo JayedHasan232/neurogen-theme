@@ -15,6 +15,7 @@ class Edit extends Component
     
     public $service;
 
+    public $type;
     public $title;
     public $url;
     public $privacy;
@@ -30,6 +31,7 @@ class Edit extends Component
         $this->service = Service::findOrFail($id);
 
         $this->privacy = $this->service->privacy;
+        $this->type = $this->service->type ?? 'regular';
         $this->title = $this->service->title;
         $this->url = $this->service->url;
         $this->article = $this->service->article;
@@ -53,6 +55,7 @@ class Edit extends Component
     public function store()
     {
         $this->validate([
+            'type' => 'required|string',
             'title' => 'required|string',
             'url' => 'required|string',
             'privacy' => 'required',
@@ -61,6 +64,7 @@ class Edit extends Component
         ]);
         
         $this->service->update([
+            'type' => $this->type,
             'title' => $this->title,
             'url' => $this->url,
             'privacy' => $this->privacy,

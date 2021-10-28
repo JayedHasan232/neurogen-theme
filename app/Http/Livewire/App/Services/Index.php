@@ -12,7 +12,9 @@ class Index extends Component
 
     public function mount()
     {
-        $this->services = Service::where('privacy', 1)->get();
+        $this->services = Service::where('privacy', 1)
+                                ->where('type', 'regular')
+                                ->get();
     }
     public function render()
     {

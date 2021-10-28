@@ -11,7 +11,9 @@ class Dca extends Component
 
     public function mount()
     {
-        $this->services = Service::where('privacy', 1)->get();
+        $this->services = Service::where('privacy', 1)
+                                ->where('type', 'deep_clinical_assessment')
+                                ->get();
     }
 
     public function render()

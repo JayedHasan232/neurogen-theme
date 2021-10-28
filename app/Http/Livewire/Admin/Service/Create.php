@@ -12,6 +12,7 @@ class Create extends Component
 {
     use WithFileUploads;
 
+    public $type = 'regular';
     public $title;
     public $url;
     public $privacy = 1;
@@ -36,6 +37,7 @@ class Create extends Component
     public function store()
     {
         $this->validate([
+            'type' => 'required|string',
             'title' => 'required|string',
             'url' => 'required|string',
             'privacy' => 'required',
@@ -45,6 +47,7 @@ class Create extends Component
         ]);
 
         $service = Service::create([
+            'type' => $this->type,
             'title' => $this->title,
             'url' => $this->url,
             'privacy' => $this->privacy,

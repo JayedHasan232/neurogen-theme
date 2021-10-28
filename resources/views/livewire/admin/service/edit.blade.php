@@ -20,7 +20,20 @@
     <div class="body">
 
         <div class="row g-3 mb-4">
-            <div class="form-group col-md-6">
+        <div class="form-group col-md-2">
+                <label for="type">Type</label>
+                <select wire:model="type" class="form-control @error('type') is-invalid @enderror" id="type" placeholder="Type">
+                    <option value="regular">Regular</option>
+                    <option value="genetic_test">Genetic Test</option>
+                    <option value="deep_clinical_assessment">Deep Clinical Assessment</option>
+                </select>
+                @error('type')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <div class="form-group col-md-5">
                 <label for="title">Title</label>
                 <input wire:model="title" class="form-control @error('title') is-invalid @enderror" type="text" id="title" placeholder="Title">
                 @error('title')
@@ -29,7 +42,7 @@
                     </span>
                 @enderror
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
                 <label for="url">URL</label>
                 <input wire:model="url" class="form-control @error('url') is-invalid @enderror" type="text" id="url" placeholder="URL">
                 @error('url')

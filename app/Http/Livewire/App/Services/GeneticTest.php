@@ -3,16 +3,17 @@
 namespace App\Http\Livewire\App\Services;
 
 use Livewire\Component;
-
-use App\Models\Text;
+use App\Models\Service;
 
 class GeneticTest extends Component
 {
-    public $test;
+    public $services;
 
     public function mount()
     {
-        $this->test = Text::where('identifier', 'genetic-test')->firstOrFail();
+        $this->services = Service::where('privacy', 1)
+                                ->where('type', 'genetic_test')
+                                ->get();
     }
 
     public function render()
