@@ -101,3 +101,26 @@ $(document).ready(function () {
     // }
 
 });
+
+
+$(document).ready(function () {
+    $("#teamReorder").sortable({
+        update: function () {
+            var dts = $(this).sortable("serialize");
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                type: 'POST',
+                url: '/admin/reorder',
+                data: dts,
+                success: function (data) {
+                    alert(data);
+                }
+            });
+        },
+    });
+    $("#sortable").disableSelection();
+});

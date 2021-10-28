@@ -12,7 +12,10 @@ class NeurodevelopmentalDisorders extends Component
 
     public function mount()
     {
-        $this->doctors = Team::where('privacy', 1)->where('member_type', $this->type)->get();
+        $this->doctors = Team::where('privacy', 1)
+                            ->where('member_type', $this->type)
+                            ->orderBy('position', 'asc')
+                            ->get();
     }
 
     public function render()

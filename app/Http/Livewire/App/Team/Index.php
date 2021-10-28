@@ -32,7 +32,10 @@ class Index extends Component
             $this->type = 5;
         }
 
-        $this->members = Team::where('privacy', 1)->where('member_type', $this->type)->get();
+        $this->members = Team::where('privacy', 1)
+                            ->where('member_type', $this->type)
+                            ->orderBy('position', 'asc')
+                            ->get();
     }
 
     public function render()

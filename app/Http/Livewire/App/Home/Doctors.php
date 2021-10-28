@@ -11,7 +11,10 @@ class Doctors extends Component
 
     public function mount()
     {
-        $this->doctors = Team::where('privacy', 1)->where('member_type', 1)->get()->take(12);
+        $this->doctors = Team::where('privacy', 1)
+                        ->where('member_type', 1)
+                        ->orderBy('position', 'asc')
+                        ->get();
     }
     public function render()
     {

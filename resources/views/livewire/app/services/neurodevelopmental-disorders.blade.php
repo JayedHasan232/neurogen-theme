@@ -19,9 +19,9 @@
         </div>
     </div>
 
-    <div class="row g-4 doctors">
+    <div class="row g-4 doctors" id="teamReorder">
         @foreach($doctors as $doctor)
-            <div class="col-sm-6 col-md-3">
+            <div class="col-sm-6 col-md-3" id="member_{{ $doctor->id }}">
                 <div class="card h-100">
                     <div class="image-frame">
                         <img src="{{ asset('storage/' .  ($doctor->image_medium ?? $doctor->image)) }}" alt="{{ $doctor->name }}" class="card-img-top">
@@ -51,3 +51,11 @@
         @endforeach
     </div>
 </section>
+
+@push('scripts')
+    @auth()
+        @if(Auth::user()->role != 0)
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" defer></script>
+        @endif
+    @endauth
+@endpush
