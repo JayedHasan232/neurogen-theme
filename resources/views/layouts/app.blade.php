@@ -96,11 +96,9 @@
     @auth()
         @if(Auth::user()->role != 0)
             <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" defer></script>
-        @else
-          Admin na
         @endif
     @else
-          Login kora lagbe
+          Need to login
     @endauth
 
     <script src="{{ asset('js/hitoisi.js') }}"></script>
