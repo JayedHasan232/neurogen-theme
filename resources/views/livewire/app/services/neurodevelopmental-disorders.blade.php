@@ -51,11 +51,3 @@
         @endforeach
     </div>
 </section>
-
-@push('scripts')
-    @auth()
-        @if(Auth::user()->role != 0)
-            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" defer></script>
-        @endif
-    @endauth
-@endpush
