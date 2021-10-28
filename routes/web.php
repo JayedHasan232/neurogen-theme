@@ -174,10 +174,10 @@ Route::namespace('App\Http\Controllers')->group(function()
             Route::post('store', 'BlogController@store')->name('store');
             Route::post('update/{id}', 'BlogController@update')->name('update');
         });
-
-        // Reorder
-        Route::post('reorder', 'HomeController@reorder');
     });
+
+    // Reorder
+    Route::post('reorder', 'HomeController@reorder');
 });
 
 

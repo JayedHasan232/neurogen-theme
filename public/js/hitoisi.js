@@ -114,7 +114,7 @@ $(document).ready(function () {
             });
             $.ajax({
                 type: 'POST',
-                url: '/admin/reorder',
+                url: '/reorder',
                 data: dts,
                 success: function (data) {
                     alert(data);
