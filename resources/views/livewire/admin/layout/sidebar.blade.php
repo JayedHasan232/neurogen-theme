@@ -11,7 +11,7 @@
 
         <!-- Services -->
         <li class="sb-item">
-            <a href="{{ route('admin.service.create') }}" class="sb-link">Services</a>
+            <a href="{{ route('admin.services.create') }}" class="sb-link">Services</a>
         </li>
 
         <!-- Slider -->

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 
 Auth::routes();
 
@@ -100,12 +102,6 @@ Route::namespace('App\Http\Livewire')->group(function()
             Route::get('edit/{id}', Edit::class)->name('edit');
         });
 
-        // Service
-        Route::namespace('Service')->name('service.')->prefix('service')->group(function(){
-            Route::get('create', Create::class)->name('create');
-            Route::get('edit/{id}', Edit::class)->name('edit');
-        });
-
         // Slider
         Route::namespace('Slider')->name('slider.')->prefix('slider')->group(function(){
             Route::get('create', Create::class)->name('create');
@@ -169,6 +165,9 @@ Route::namespace('App\Http\Controllers')->group(function()
     // Admin
     Route::middleware(['auth', 'admin'])->name('admin.')->prefix('admin')->group(function()
     {
+        // Service
+        Route::resource('services', ServiceController::class);
+
         // Blog
         Route::name('blog.')->prefix('blog')->group(function(){
             Route::post('store', 'BlogController@store')->name('store');
@@ -178,6 +177,13 @@ Route::namespace('App\Http\Controllers')->group(function()
 
     // Reorder
     Route::post('reorder', 'HomeController@reorder');
+    
+    // Slug generator
+    Route::post('generate-slug', function(Request $request)
+    {
+        return Str::slug($request->title);
+    });
+
 });
 
 
