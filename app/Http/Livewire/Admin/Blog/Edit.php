@@ -24,6 +24,7 @@ class Edit extends Component
     public $category;
     public $subcategory;
     public $meta_title;
+    public $meta_description;
     public $meta_keywords;
     public $tags;
 
