@@ -37,6 +37,8 @@
                     <option value="5">Nutritionist</option>
                     <option value="6">Executive Team</option>
                     <option value="7">Scientific Advisory Team</option>
+                    <option value="8">Oncology</option>
+                    <option value="9">OBGYN</option>
                 </select>
                 @error('type')
                     <span class="invalid-feedback" role="alert">

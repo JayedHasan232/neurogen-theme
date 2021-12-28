@@ -50,10 +50,10 @@
                                     <a class="cm-link" href="{{ route('app.healthcare.neurodevelopmental-disorders') }}">{{ __('Neurodevelopmental Disorders') }}</a>
                                 </li>
                                 <li class="cm-item">
-                                    <a class="cm-link" href="#">{{ __('Oncology') }}</a>
+                                    <a class="cm-link" href="{{ route('app.healthcare.oncology') }}">{{ __('Oncology') }}</a>
                                 </li>
                                 <li class="cm-item">
-                                    <a class="cm-link" href="#">{{ __('Cardiovascular Diseases') }}</a>
+                                    <a class="cm-link" href="{{ route('app.healthcare.obgyn') }}">{{ __('OBGYN') }}</a>
                                 </li>
                             </ul>
                         </li>
