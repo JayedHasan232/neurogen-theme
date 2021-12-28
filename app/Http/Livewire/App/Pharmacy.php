@@ -88,7 +88,7 @@ class Pharmacy extends Component
             'payment_method' => $this->payment_method,
         ];
 
-        Mail::to($info->pharmacy_email)->send(new Medicine($data));
+        Mail::to($this->info->pharmacy_email)->send(new Medicine($data));
 
         // Deleting temporarily stored image
         Storage::delete($prescription);
