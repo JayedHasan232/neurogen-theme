@@ -16,6 +16,7 @@ class Create extends Component
     public $categories;
     public $subcategories = [];
 
+    public $privacy;
     public $title;
     public $url;
     public $category;
