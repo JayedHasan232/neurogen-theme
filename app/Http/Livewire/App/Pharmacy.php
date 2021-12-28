@@ -6,6 +6,7 @@ use Storage;
 use Livewire\Component;
 use Mail;
 use App\Mail\Medicine;
+use App\Models\SiteInfo as Info;
 use App\Models\Medicine as MedicineData;
 use Livewire\WithFileUploads;
 
@@ -14,6 +15,7 @@ class Pharmacy extends Component
     use WithFileUploads;
 
     // Properties
+    public $info;
     public $medicines_data;
 
     public $medicines;
@@ -30,6 +32,7 @@ class Pharmacy extends Component
 
     public function dataLoader()
     {
+        $this->info = Info::find(1);
         $this->medicines_data = MedicineData::all();
 
         $this->medicines = [
@@ -85,7 +88,7 @@ class Pharmacy extends Component
             'payment_method' => $this->payment_method,
         ];
 
-        Mail::to('info@neurogenbd.com')->send(new Medicine($data));
+        Mail::to($info->pharmacy_email)->send(new Medicine($data));
 
         // Deleting temporarily stored image
         Storage::delete($prescription);

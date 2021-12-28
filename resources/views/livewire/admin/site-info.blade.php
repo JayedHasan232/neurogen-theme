@@ -51,6 +51,24 @@
                     </span>
                 @enderror
             </div>
+            <div class="form-group col-md-4">
+                <label for="appointment_email">Appointment Email</label>
+                <input wire:model="appointment_email" class="form-control @error('appointment_email') is-invalid @enderror" type="email" name="appointment_email" id="appointment_email" placeholder="Email">
+                @error('appointment_email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <div class="form-group col-md-4">
+                <label for="pharmacy_email">Pharmacy Email</label>
+                <input wire:model="pharmacy_email" class="form-control @error('pharmacy_email') is-invalid @enderror" type="email" name="pharmacy_email" id="pharmacy_email" placeholder="Email">
+                @error('pharmacy_email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
 
             <div class="form-group col-md-4">
                 <label for="facebook_page">Facebook Page</label>

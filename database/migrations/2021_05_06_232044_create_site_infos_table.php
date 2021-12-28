@@ -19,6 +19,8 @@ class CreateSiteInfosTable extends Migration
             $table->string('domain')->nullable();
             $table->string('mobile')->nullable();
             $table->string('email')->nullable();
+            $table->string('appointment_email')->nullable();
+            $table->string('pharmacy_email')->nullable();
 
             $table->text('google_map')->nullable();
             $table->text('address')->nullable();

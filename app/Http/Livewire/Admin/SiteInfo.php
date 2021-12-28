@@ -12,7 +12,7 @@ class SiteInfo extends Component
 {
     use WithFileUploads;
 
-    public $name, $domain, $mobile, $email, $google_map, $address, $overview, $facebook_page, $facebook_group, $twitter, $linkedin, $youtube, $logo, $favicon, $header_bg;
+    public $name, $domain, $mobile, $email, $appointment_email, $pharmacy_email, $google_map, $address, $overview, $facebook_page, $facebook_group, $twitter, $linkedin, $youtube, $logo, $favicon, $header_bg;
     
     public function mount()
     {
@@ -22,6 +22,8 @@ class SiteInfo extends Component
         $this->domain = $info->domain ?? '';
         $this->mobile = $info->mobile ?? '';
         $this->email = $info->email ?? '';
+        $this->appointment_email = $info->appointment_email ?? '';
+        $this->pharmacy_email = $info->pharmacy_email ?? '';
         $this->google_map = $info->google_map ?? '';
         $this->address = $info->address ?? '';
         $this->overview = $info->overview ?? '';
@@ -42,6 +44,8 @@ class SiteInfo extends Component
                 'domain' => $this->domain,
                 'mobile' => $this->mobile,
                 'email' => $this->email,
+                'appointment_email' => $this->appointment_email,
+                'pharmacy_email' => $this->pharmacy_email,
                 'google_map' => $this->google_map,
                 'address' => $this->address,
                 'overview' => $this->overview,
@@ -59,6 +63,8 @@ class SiteInfo extends Component
                 'domain' => $this->domain,
                 'mobile' => $this->mobile,
                 'email' => $this->email,
+                'appointment_email' => $this->appointment_email,
+                'pharmacy_email' => $this->pharmacy_email,
                 'google_map' => $this->google_map,
                 'address' => $this->address,
                 'overview' => $this->overview,

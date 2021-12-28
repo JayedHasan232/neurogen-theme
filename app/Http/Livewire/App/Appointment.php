@@ -37,7 +37,7 @@ class Appointment extends Component
             'date' => $this->date,
             'message' => $this->message,
         ];
-        Mail::to('appointment@neurogenbd.com')->send(new Appoint($data));
+        Mail::to($info->appointment_email)->send(new Appoint($data));
 
         $this->reset();
         $this->dataLoader();
