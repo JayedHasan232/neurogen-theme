@@ -97,8 +97,6 @@
         @if(Auth::user()->role != 0)
             <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" defer></script>
         @endif
-    @else
-          Need to login
     @endauth
 
     <script src="{{ asset('js/hitoisi.js') }}"></script>
