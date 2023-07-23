@@ -39,9 +39,9 @@ class Index extends Component
             'email' => $this->cEmail,
             'message' => $this->cMessage,
         ];
-        Mail::to('jayedhasan232@gmail.com')->send(new Contact($data));
+        Mail::to('info@neurogenbd.com')->cc('neurogenbd@gmail.com')->send(new Contact($data));
 
-        // $this->reset();
+        $this->reset();
         $this->dataLoader();
         
         return back()->with('success', 'Successfully Sent!');
